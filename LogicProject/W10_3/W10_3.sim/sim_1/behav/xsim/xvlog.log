@@ -1,0 +1,12 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/myatt/Desktop/LogicProject/W10_3/mux.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/myatt/Desktop/LogicProject/W10_3/register_1bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module register_1bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/myatt/Desktop/LogicProject/W10_3/selector.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module selector
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/myatt/Desktop/LogicProject/W10_3/sram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sram
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/myatt/Desktop/LogicProject/W10_3/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/myatt/Desktop/LogicProject/W10_3/W10_3.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

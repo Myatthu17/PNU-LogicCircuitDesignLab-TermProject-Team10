@@ -1,0 +1,6 @@
+set_property PACKAGE_PIN B6 [get_ports clk]
+set_property PACKAGE_PIN Y21 [get_ports piezo]
+set_property PACKAGE_PIN K4 [get_ports rst]
+set_property IOSTANDARD LVCMOS33 [get_ports clk]
+set_property IOSTANDARD LVCMOS33 [get_ports piezo]
+set_property IOSTANDARD LVCMOS33 [get_ports rst]

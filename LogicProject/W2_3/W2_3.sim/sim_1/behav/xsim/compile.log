@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/myatt/OneDrive/Desktop/LogicProject/W2_3/mult_4bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mult_4bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/myatt/OneDrive/Desktop/LogicProject/W2_3/Testbench_for_mult.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/myatt/OneDrive/Desktop/LogicProject/W2_3/W2_3.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

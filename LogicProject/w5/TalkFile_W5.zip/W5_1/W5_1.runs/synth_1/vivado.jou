@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Mon Oct 13 11:01:43 2025
+# Process ID: 4872
+# Current directory: C:/Users/moshi/Downloads/TalkFile_W5.zip/W5_1/W5_1.runs/synth_1
+# Command line: vivado.exe -log counter_dnup.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source counter_dnup.tcl
+# Log file: C:/Users/moshi/Downloads/TalkFile_W5.zip/W5_1/W5_1.runs/synth_1/counter_dnup.vds
+# Journal file: C:/Users/moshi/Downloads/TalkFile_W5.zip/W5_1/W5_1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source counter_dnup.tcl -notrace

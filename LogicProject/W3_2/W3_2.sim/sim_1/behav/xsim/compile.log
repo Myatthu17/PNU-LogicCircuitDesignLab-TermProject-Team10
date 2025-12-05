@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/myatt/Desktop/LogicProject/W3_2/decimal_to_binary.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decimal_to_binary
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/myatt/Desktop/LogicProject/W3_2/test_bench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench

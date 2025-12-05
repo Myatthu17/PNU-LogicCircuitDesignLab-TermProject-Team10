@@ -1,0 +1,32 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Time=0 | rst=1 | dip=000 | state=00 | stepmotor=0000
+Time=10000 | rst=0 | dip=010 | state=00 | stepmotor=0000
+Time=15000 | rst=0 | dip=010 | state=00 | stepmotor=1000
+Time=25000 | rst=0 | dip=010 | state=00 | stepmotor=0100
+Time=35000 | rst=0 | dip=010 | state=00 | stepmotor=0010
+Time=45000 | rst=0 | dip=010 | state=00 | stepmotor=0001
+Time=55000 | rst=0 | dip=010 | state=00 | stepmotor=1000
+Time=65000 | rst=0 | dip=010 | state=00 | stepmotor=0100
+Time=75000 | rst=0 | dip=010 | state=00 | stepmotor=0010
+Time=85000 | rst=0 | dip=010 | state=00 | stepmotor=0001
+Time=90000 | rst=0 | dip=101 | state=00 | stepmotor=0001
+Time=95000 | rst=0 | dip=101 | state=11 | stepmotor=0001
+Time=105000 | rst=0 | dip=101 | state=11 | stepmotor=0010
+Time=115000 | rst=0 | dip=101 | state=11 | stepmotor=0100
+Time=125000 | rst=0 | dip=101 | state=11 | stepmotor=1000
+Time=135000 | rst=0 | dip=101 | state=11 | stepmotor=0001
+Time=145000 | rst=0 | dip=101 | state=11 | stepmotor=0010
+Time=155000 | rst=0 | dip=101 | state=11 | stepmotor=0100
+Time=165000 | rst=0 | dip=101 | state=11 | stepmotor=1000
+Time=170000 | rst=1 | dip=101 | state=00 | stepmotor=0000
+Time=180000 | rst=0 | dip=111 | state=00 | stepmotor=0000
+Time=185000 | rst=0 | dip=111 | state=11 | stepmotor=0001
+Time=195000 | rst=0 | dip=111 | state=11 | stepmotor=0010
+Time=205000 | rst=0 | dip=111 | state=11 | stepmotor=0100
+Time=215000 | rst=0 | dip=111 | state=11 | stepmotor=1000
+Time=225000 | rst=0 | dip=111 | state=11 | stepmotor=0001
+Time=235000 | rst=0 | dip=111 | state=11 | stepmotor=0010
+Time=245000 | rst=0 | dip=111 | state=11 | stepmotor=0100
+Time=255000 | rst=0 | dip=111 | state=11 | stepmotor=1000
+$finish called at time : 260 ns : File "C:/Users/moshi/Downloads/TalkFile_W5.zip/W5_2/testbench.v" Line 60

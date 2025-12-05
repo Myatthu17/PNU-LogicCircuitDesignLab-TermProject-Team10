@@ -1,0 +1,10 @@
+0.7
+2020.1
+May 27 2020
+20:09:33
+C:/Users/myatt/Desktop/LogicProject/W10_3/W10_3.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
+C:/Users/myatt/Desktop/LogicProject/W10_3/mux.v,1762241333,verilog,,C:/Users/myatt/Desktop/LogicProject/W10_3/register_1bit.v,,mux,,,,,,,,
+C:/Users/myatt/Desktop/LogicProject/W10_3/register_1bit.v,1762241371,verilog,,C:/Users/myatt/Desktop/LogicProject/W10_3/selector.v,,register_1bit,,,,,,,,
+C:/Users/myatt/Desktop/LogicProject/W10_3/selector.v,1762241358,verilog,,C:/Users/myatt/Desktop/LogicProject/W10_3/sram.v,,selector,,,,,,,,
+C:/Users/myatt/Desktop/LogicProject/W10_3/sram.v,1762241424,verilog,,C:/Users/myatt/Desktop/LogicProject/W10_3/testbench.v,,sram,,,,,,,,
+C:/Users/myatt/Desktop/LogicProject/W10_3/testbench.v,1762241612,verilog,,,,testbench,,,,,,,,

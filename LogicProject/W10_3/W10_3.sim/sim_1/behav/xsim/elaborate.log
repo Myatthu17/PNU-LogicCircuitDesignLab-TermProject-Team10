@@ -1,0 +1,31 @@
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 79447be597e843d897025988af214522 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/myatt/Desktop/LogicProject/W10_3/sram.v" Line 1. Module sram doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/myatt/Desktop/LogicProject/W10_3/selector.v" Line 1. Module selector doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/myatt/Desktop/LogicProject/W10_3/register_1bit.v" Line 1. Module register_1bit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/myatt/Desktop/LogicProject/W10_3/register_1bit.v" Line 1. Module register_1bit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/myatt/Desktop/LogicProject/W10_3/register_1bit.v" Line 1. Module register_1bit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/myatt/Desktop/LogicProject/W10_3/register_1bit.v" Line 1. Module register_1bit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/myatt/Desktop/LogicProject/W10_3/mux.v" Line 1. Module mux doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/myatt/Desktop/LogicProject/W10_3/sram.v" Line 1. Module sram doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/myatt/Desktop/LogicProject/W10_3/selector.v" Line 1. Module selector doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/myatt/Desktop/LogicProject/W10_3/register_1bit.v" Line 1. Module register_1bit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/myatt/Desktop/LogicProject/W10_3/register_1bit.v" Line 1. Module register_1bit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/myatt/Desktop/LogicProject/W10_3/register_1bit.v" Line 1. Module register_1bit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/myatt/Desktop/LogicProject/W10_3/register_1bit.v" Line 1. Module register_1bit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/myatt/Desktop/LogicProject/W10_3/mux.v" Line 1. Module mux doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.selector
+Compiling module xil_defaultlib.register_1bit
+Compiling module xil_defaultlib.mux
+Compiling module xil_defaultlib.sram
+Compiling module xil_defaultlib.testbench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot testbench_behav

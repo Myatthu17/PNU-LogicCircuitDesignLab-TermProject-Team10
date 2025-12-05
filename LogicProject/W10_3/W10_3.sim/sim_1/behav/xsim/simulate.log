@@ -1,0 +1,10 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+=== Starting SRAM Test ===
+Read from reg0: 00 (DataOut=1, Q=0101)
+Read from reg1: 01 (DataOut=0, Q=0101)
+Read from reg2: 10 (DataOut=1, Q=0101)
+Read from reg3: 11 (DataOut=0, Q=0101)
+After reset: Q = 0000, DataOut = 0
+=== SRAM Test Finished ===
+$stop called at time : 110 ns : File "C:/Users/myatt/Desktop/LogicProject/W10_3/testbench.v" Line 69

@@ -1,0 +1,8 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+T=0: Initializing, applying reset (rst=1)
+T=60000: Starting RIGHT rotation (dip=5). Expected state=11.
+T=260000: Starting LEFT rotation (dip=2). Expected state=00.
+T=460000: Re-applying reset (rst=1).
+T=510000: Simulation finished.
+$stop called at time : 510 ns : File "C:/Users/myatt/Desktop/LogicProject/W5_2/testbench.v" Line 80

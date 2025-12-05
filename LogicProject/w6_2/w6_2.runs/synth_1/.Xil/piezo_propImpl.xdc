@@ -1,0 +1,7 @@
+set_property SRC_FILE_INFO {cfile:C:/Users/myatt/Desktop/LogicProject/w6_2/w6_2.srcs/constrs_1/new/w6_2.xdc rfile:../../../w6_2.srcs/constrs_1/new/w6_2.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:1 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN B6 [get_ports clk]
+set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN Y21 [get_ports piezo]
+set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN K4 [get_ports rst]

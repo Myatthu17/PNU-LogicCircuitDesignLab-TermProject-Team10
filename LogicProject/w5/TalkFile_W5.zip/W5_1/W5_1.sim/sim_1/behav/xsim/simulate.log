@@ -1,0 +1,33 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Time=0 | rst=1 | updn=0 | q=0000
+Time=10000 | rst=0 | updn=1 | q=0000
+Time=15000 | rst=0 | updn=1 | q=0001
+Time=25000 | rst=0 | updn=1 | q=0010
+Time=35000 | rst=0 | updn=1 | q=0011
+Time=45000 | rst=0 | updn=1 | q=0100
+Time=55000 | rst=0 | updn=1 | q=0101
+Time=65000 | rst=0 | updn=1 | q=0110
+Time=75000 | rst=0 | updn=1 | q=0111
+Time=85000 | rst=0 | updn=1 | q=1000
+Time=95000 | rst=0 | updn=1 | q=1001
+Time=105000 | rst=0 | updn=1 | q=1010
+Time=110000 | rst=0 | updn=0 | q=1010
+Time=115000 | rst=0 | updn=0 | q=1001
+Time=125000 | rst=0 | updn=0 | q=1000
+Time=135000 | rst=0 | updn=0 | q=0111
+Time=145000 | rst=0 | updn=0 | q=0110
+Time=155000 | rst=0 | updn=0 | q=0101
+Time=165000 | rst=0 | updn=0 | q=0100
+Time=175000 | rst=0 | updn=0 | q=0011
+Time=185000 | rst=0 | updn=0 | q=0010
+Time=195000 | rst=0 | updn=0 | q=0001
+Time=205000 | rst=0 | updn=0 | q=0000
+Time=210000 | rst=1 | updn=0 | q=0000
+Time=220000 | rst=0 | updn=0 | q=0000
+Time=225000 | rst=0 | updn=0 | q=1111
+Time=235000 | rst=0 | updn=0 | q=1110
+Time=245000 | rst=0 | updn=0 | q=1101
+Time=255000 | rst=0 | updn=0 | q=1100
+Time=265000 | rst=0 | updn=0 | q=1011
+$finish called at time : 270 ns : File "C:/Users/myatt/Desktop/LogicProject/w5/TalkFile_W5.zip/W5_1/testbench.v" Line 42

@@ -1,0 +1,8 @@
+0.7
+2020.1
+May 27 2020
+20:09:33
+C:/Users/myatt/OneDrive/Desktop/LogicProject/W2_1/W2_1.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
+C:/Users/myatt/OneDrive/Desktop/LogicProject/full_adder.v,1757412151,verilog,,C:/Users/myatt/OneDrive/Desktop/LogicProject/half_adder.v,,full_adder,,,,,,,,
+C:/Users/myatt/OneDrive/Desktop/LogicProject/half_adder.v,1757410795,verilog,,C:/Users/myatt/OneDrive/Desktop/LogicProject/testbench_for_w2.v,,half_adder,,,,,,,,
+C:/Users/myatt/OneDrive/Desktop/LogicProject/testbench_for_w2.v,1757411347,verilog,,,,testbench,,,,,,,,

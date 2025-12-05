@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/myatt/Desktop/LogicProject/W6_3/piezo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module piezo
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/myatt/Desktop/LogicProject/W6_3/tb_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_3

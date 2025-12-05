@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Tue Sep  9 20:09:12 2025
+# Process ID: 11100
+# Current directory: C:/Users/myatt/OneDrive/Desktop/LogicProject/ripple/ripple.runs/synth_1
+# Command line: vivado.exe -log ripple_adder_4bit.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ripple_adder_4bit.tcl
+# Log file: C:/Users/myatt/OneDrive/Desktop/LogicProject/ripple/ripple.runs/synth_1/ripple_adder_4bit.vds
+# Journal file: C:/Users/myatt/OneDrive/Desktop/LogicProject/ripple/ripple.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source ripple_adder_4bit.tcl -notrace

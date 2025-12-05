@@ -1,0 +1,9 @@
+0.7
+2020.1
+May 27 2020
+20:09:33
+C:/Users/myatt/Desktop/LogicProject/W11/W11.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
+C:/Users/myatt/Desktop/LogicProject/W11/testbench.v,1762844423,verilog,,,,tb_traffic_light,,,,,,,,
+C:/Users/myatt/Desktop/LogicProject/W11/top.v,1762843256,verilog,,C:/Users/myatt/Desktop/LogicProject/W11/traffic_light.v,,top,,,,,,,,
+C:/Users/myatt/Desktop/LogicProject/W11/traffic_light.v,1762843222,verilog,,C:/Users/myatt/Desktop/LogicProject/W11/trigger.v,,traffic_light,,,,,,,,
+C:/Users/myatt/Desktop/LogicProject/W11/trigger.v,1762843184,verilog,,C:/Users/myatt/Desktop/LogicProject/W11/testbench.v,,trigger,,,,,,,,

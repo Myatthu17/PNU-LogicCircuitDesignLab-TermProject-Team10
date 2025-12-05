@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/moshi/Downloads/TalkFile_W5.zip/W5_2/stepper_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module stepmotor_ctrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/moshi/Downloads/TalkFile_W5.zip/W5_2/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_stepmotor_ctrl

@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/myatt/Desktop/LogicProject/W4_3/comparator_3bit_seg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module comparator_3bit_seg
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/myatt/Desktop/LogicProject/W4_3/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench

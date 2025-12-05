@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/myatt/Desktop/LogicProject/W4_2/demux.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module demux
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/myatt/Desktop/LogicProject/W4_2/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench

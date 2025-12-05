@@ -1,0 +1,11 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Time=0 | sel=0 | A=5 B=2 | O=100 | seg_data=10110110 seg_com=00001111
+Time=100000 | sel=1 | A=5 B=2 | O=100 | seg_data=11011010 seg_com=11110000
+Time=200000 | sel=0 | A=3 B=3 | O=010 | seg_data=11110010 seg_com=00001111
+Time=300000 | sel=1 | A=3 B=3 | O=010 | seg_data=11110010 seg_com=11110000
+Time=400000 | sel=0 | A=1 B=6 | O=001 | seg_data=01100000 seg_com=00001111
+Time=500000 | sel=1 | A=1 B=6 | O=001 | seg_data=10111110 seg_com=11110000
+Time=600000 | sel=0 | A=7 B=0 | O=100 | seg_data=11100000 seg_com=00001111
+Time=700000 | sel=1 | A=7 B=0 | O=100 | seg_data=11111100 seg_com=11110000
+$finish called at time : 800 ns : File "C:/Users/myatt/Desktop/LogicProject/W4_3/testbench.v" Line 43

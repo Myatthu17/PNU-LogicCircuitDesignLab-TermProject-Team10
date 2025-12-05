@@ -1,0 +1,6 @@
+set_property IOSTANDARD LVCMOS33 [get_ports clk]
+set_property IOSTANDARD LVCMOS33 [get_ports resetn]
+set_property IOSTANDARD LVCMOS33 [get_ports servo]
+set_property PACKAGE_PIN B6 [get_ports clk]
+set_property PACKAGE_PIN N8 [get_ports resetn]
+set_property PACKAGE_PIN AA22 [get_ports servo]
