@@ -2,12 +2,12 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Tue Dec  2 20:44:21 2025
-# Process ID: 19528
-# Current directory: C:/Users/myatt/Desktop/circuit porject/project_1/project_1.runs/synth_1
+# Start of session at: Tue Dec  9 19:17:14 2025
+# Process ID: 22100
+# Current directory: C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/project_1/project_1.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file: C:/Users/myatt/Desktop/circuit porject/project_1/project_1.runs/synth_1/top.vds
-# Journal file: C:/Users/myatt/Desktop/circuit porject/project_1/project_1.runs/synth_1\vivado.jou
+# Log file: C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/project_1/project_1.runs/synth_1/top.vds
+# Journal file: C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/project_1/project_1.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source top.tcl -notrace
 Command: synth_design -top top -part xc7s75fgga484-1
@@ -17,34 +17,34 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s75'
 INFO: [Device 21-403] Loading part xc7s75fgga484-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 12668
-WARNING: [Synth 8-6901] identifier 'state' is used before its declaration [C:/Users/myatt/Desktop/circuit porject/calculator.v:189]
-WARNING: [Synth 8-6901] identifier 'S_WRITE_CHAR' is used before its declaration [C:/Users/myatt/Desktop/circuit porject/calculator.v:189]
-WARNING: [Synth 8-6901] identifier 'write_char_done' is used before its declaration [C:/Users/myatt/Desktop/circuit porject/calculator.v:189]
-WARNING: [Synth 8-6901] identifier 'state' is used before its declaration [C:/Users/myatt/Desktop/circuit porject/calculator.v:196]
-WARNING: [Synth 8-6901] identifier 'S_WRITE_CHAR' is used before its declaration [C:/Users/myatt/Desktop/circuit porject/calculator.v:196]
-WARNING: [Synth 8-6901] identifier 'write_char_done' is used before its declaration [C:/Users/myatt/Desktop/circuit porject/calculator.v:196]
-WARNING: [Synth 8-6901] identifier 'cursor_pos' is used before its declaration [C:/Users/myatt/Desktop/circuit porject/calculator.v:423]
-WARNING: [Synth 8-6901] identifier 'cursor_pos' is used before its declaration [C:/Users/myatt/Desktop/circuit porject/calculator.v:424]
-WARNING: [Synth 8-6901] identifier 'cursor_line' is used before its declaration [C:/Users/myatt/Desktop/circuit porject/calculator.v:425]
-WARNING: [Synth 8-6901] identifier 'cursor_line' is used before its declaration [C:/Users/myatt/Desktop/circuit porject/calculator.v:426]
-WARNING: [Synth 8-6901] identifier 'state' is used before its declaration [C:/Users/myatt/Desktop/circuit porject/calculator.v:453]
-WARNING: [Synth 8-6901] identifier 'S_CLEAR' is used before its declaration [C:/Users/myatt/Desktop/circuit porject/calculator.v:453]
-WARNING: [Synth 8-6901] identifier 'state' is used before its declaration [C:/Users/myatt/Desktop/circuit porject/calculator.v:457]
-WARNING: [Synth 8-6901] identifier 'S_IDLE' is used before its declaration [C:/Users/myatt/Desktop/circuit porject/calculator.v:457]
-WARNING: [Synth 8-6901] identifier 'state' is used before its declaration [C:/Users/myatt/Desktop/circuit porject/calculator.v:480]
-WARNING: [Synth 8-6901] identifier 'S_CLEAR' is used before its declaration [C:/Users/myatt/Desktop/circuit porject/calculator.v:480]
-WARNING: [Synth 8-6901] identifier 'cnt' is used before its declaration [C:/Users/myatt/Desktop/circuit porject/calculator.v:480]
-WARNING: [Synth 8-6901] identifier 'state' is used before its declaration [C:/Users/myatt/Desktop/circuit porject/calculator.v:482]
-WARNING: [Synth 8-6901] identifier 'S_WRITE_CHAR' is used before its declaration [C:/Users/myatt/Desktop/circuit porject/calculator.v:482]
-WARNING: [Synth 8-6901] identifier 'write_char_done' is used before its declaration [C:/Users/myatt/Desktop/circuit porject/calculator.v:482]
-WARNING: [Synth 8-2292] literal value truncated to fit in 25 bits [C:/Users/myatt/Desktop/circuit porject/puzzle.v:226]
-WARNING: [Synth 8-2292] literal value truncated to fit in 25 bits [C:/Users/myatt/Desktop/circuit porject/puzzle.v:232]
+INFO: [Synth 8-7075] Helper process launched with PID 24020
+WARNING: [Synth 8-6901] identifier 'state' is used before its declaration [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:314]
+WARNING: [Synth 8-6901] identifier 'S_WRITE_CHAR' is used before its declaration [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:314]
+WARNING: [Synth 8-6901] identifier 'write_char_done' is used before its declaration [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:314]
+WARNING: [Synth 8-6901] identifier 'state' is used before its declaration [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:321]
+WARNING: [Synth 8-6901] identifier 'S_WRITE_CHAR' is used before its declaration [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:321]
+WARNING: [Synth 8-6901] identifier 'write_char_done' is used before its declaration [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:321]
+WARNING: [Synth 8-6901] identifier 'cursor_pos' is used before its declaration [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:548]
+WARNING: [Synth 8-6901] identifier 'cursor_pos' is used before its declaration [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:549]
+WARNING: [Synth 8-6901] identifier 'cursor_line' is used before its declaration [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:550]
+WARNING: [Synth 8-6901] identifier 'cursor_line' is used before its declaration [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:551]
+WARNING: [Synth 8-6901] identifier 'state' is used before its declaration [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:578]
+WARNING: [Synth 8-6901] identifier 'S_CLEAR' is used before its declaration [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:578]
+WARNING: [Synth 8-6901] identifier 'state' is used before its declaration [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:582]
+WARNING: [Synth 8-6901] identifier 'S_IDLE' is used before its declaration [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:582]
+WARNING: [Synth 8-6901] identifier 'state' is used before its declaration [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:605]
+WARNING: [Synth 8-6901] identifier 'S_CLEAR' is used before its declaration [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:605]
+WARNING: [Synth 8-6901] identifier 'cnt' is used before its declaration [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:605]
+WARNING: [Synth 8-6901] identifier 'state' is used before its declaration [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:607]
+WARNING: [Synth 8-6901] identifier 'S_WRITE_CHAR' is used before its declaration [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:607]
+WARNING: [Synth 8-6901] identifier 'write_char_done' is used before its declaration [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:607]
+WARNING: [Synth 8-2292] literal value truncated to fit in 25 bits [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/puzzle.v:248]
+WARNING: [Synth 8-2292] literal value truncated to fit in 25 bits [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/puzzle.v:254]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1028.910 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1024.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/myatt/Desktop/circuit porject/top.v:1]
-INFO: [Synth 8-6157] synthesizing module 'puzzle' [C:/Users/myatt/Desktop/circuit porject/puzzle.v:1]
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/top.v:1]
+INFO: [Synth 8-6157] synthesizing module 'puzzle' [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/puzzle.v:1]
 	Parameter S_MODE bound to: 3'b000 
 	Parameter S_NAME bound to: 3'b001 
 	Parameter S_GEN bound to: 3'b010 
@@ -74,9 +74,9 @@ INFO: [Synth 8-6157] synthesizing module 'puzzle' [C:/Users/myatt/Desktop/circui
 	Parameter KEYPAD_DUR bound to: 25'b0010011000100101101000000 
 	Parameter COUNT321_TOTAL_DUR bound to: 25'b0011000100101101000000000 
 	Parameter FEEDBACK_WAIT_TICKS bound to: 100000000 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/Users/myatt/Desktop/circuit porject/puzzle.v:558]
-INFO: [Synth 8-226] default block is never used [C:/Users/myatt/Desktop/circuit porject/puzzle.v:580]
-INFO: [Synth 8-6157] synthesizing module 'textlcd_flat' [C:/Users/myatt/Desktop/circuit porject/puzzle.v:1040]
+INFO: [Synth 8-226] default block is never used [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/puzzle.v:385]
+INFO: [Synth 8-226] default block is never used [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/puzzle.v:641]
+INFO: [Synth 8-6157] synthesizing module 'textlcd_flat' [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/puzzle.v:1154]
 	Parameter ST_POWON bound to: 4'b0000 
 	Parameter ST_FUNC_HIGH bound to: 4'b0001 
 	Parameter ST_FUNC_LOW bound to: 4'b0010 
@@ -91,10 +91,21 @@ INFO: [Synth 8-6157] synthesizing module 'textlcd_flat' [C:/Users/myatt/Desktop/
 	Parameter ST_SETADDR_L bound to: 4'b1011 
 	Parameter ST_WRITE_H bound to: 4'b1100 
 	Parameter ST_WRITE_L bound to: 4'b1101 
-INFO: [Synth 8-6155] done synthesizing module 'textlcd_flat' (1#1) [C:/Users/myatt/Desktop/circuit porject/puzzle.v:1040]
-INFO: [Synth 8-6155] done synthesizing module 'puzzle' (2#1) [C:/Users/myatt/Desktop/circuit porject/puzzle.v:1]
-INFO: [Synth 8-6157] synthesizing module 'calculator' [C:/Users/myatt/Desktop/circuit porject/calculator.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'textlcd_flat' (1#1) [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/puzzle.v:1154]
+INFO: [Synth 8-6155] done synthesizing module 'puzzle' (2#1) [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/puzzle.v:1]
+INFO: [Synth 8-6157] synthesizing module 'calculator' [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:1]
 	Parameter SEG_BLANK bound to: 7'b0000000 
+	Parameter BUZZ_IDLE bound to: 3'b000 
+	Parameter BUZZ_KEYPAD bound to: 3'b001 
+	Parameter NOTE_DO bound to: 16'b0110000110101000 
+	Parameter NOTE_RE bound to: 16'b0101010111110000 
+	Parameter NOTE_MI bound to: 16'b0100111000100000 
+	Parameter NOTE_FA bound to: 16'b0100011001010000 
+	Parameter NOTE_SO bound to: 16'b0011111010000000 
+	Parameter NOTE_LA bound to: 16'b0011011010110000 
+	Parameter NOTE_TI bound to: 16'b0010111011100000 
+	Parameter NOTE_DO2 bound to: 16'b0010011100010000 
+	Parameter KEYPAD_DUR bound to: 25'b0010011000100101101000000 
 	Parameter S_DELAY bound to: 4'b0000 
 	Parameter S_FUNCTION_SET bound to: 4'b0001 
 	Parameter S_DISPLAY_ON bound to: 4'b0010 
@@ -104,169 +115,169 @@ INFO: [Synth 8-6157] synthesizing module 'calculator' [C:/Users/myatt/Desktop/ci
 	Parameter S_IDLE bound to: 4'b0110 
 	Parameter S_WRITE_CHAR bound to: 4'b0111 
 	Parameter S_RESULT bound to: 4'b1000 
-INFO: [Synth 8-226] default block is never used [C:/Users/myatt/Desktop/circuit porject/calculator.v:341]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/myatt/Desktop/circuit porject/calculator.v:557]
-INFO: [Synth 8-6155] done synthesizing module 'calculator' (3#1) [C:/Users/myatt/Desktop/circuit porject/calculator.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'top' (4#1) [C:/Users/myatt/Desktop/circuit porject/top.v:1]
+INFO: [Synth 8-226] default block is never used [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:466]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:682]
+INFO: [Synth 8-6155] done synthesizing module 'calculator' (3#1) [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/calculator.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'top' (4#1) [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/top.v:1]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1028.910 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1024.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1028.910 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1024.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1028.910 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1024.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 1028.910 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.068 . Memory (MB): peak = 1024.828 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/myatt/Desktop/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc]
-WARNING: [Vivado 12-584] No ports matched 'DIP_MODE[1]'. [C:/Users/myatt/Desktop/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc:19]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/myatt/Desktop/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc:19]
+Parsing XDC File [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc]
+WARNING: [Vivado 12-584] No ports matched 'DIP_MODE[1]'. [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc:19]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'DIP_MODE[0]'. [C:/Users/myatt/Desktop/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc:20]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/myatt/Desktop/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc:20]
+WARNING: [Vivado 12-584] No ports matched 'DIP_MODE[0]'. [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc:20]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'DIP_MODE[1]'. [C:/Users/myatt/Desktop/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc:60]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/myatt/Desktop/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc:60]
+WARNING: [Vivado 12-584] No ports matched 'DIP_MODE[1]'. [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc:60]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'DIP_MODE[0]'. [C:/Users/myatt/Desktop/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc:61]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/myatt/Desktop/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc:61]
+WARNING: [Vivado 12-584] No ports matched 'DIP_MODE[0]'. [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc:61]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-Finished Parsing XDC File [C:/Users/myatt/Desktop/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/myatt/Desktop/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Finished Parsing XDC File [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/project_1/project_1.srcs/constrs_1/new/project1.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1088.535 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1098.840 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1088.535 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1098.840 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1088.535 ; gain = 59.625
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1098.840 ; gain = 74.012
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s75fgga484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1088.535 ; gain = 59.625
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1098.840 ; gain = 74.012
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1088.535 ; gain = 59.625
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1098.840 ; gain = 74.012
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1088.535 ; gain = 59.625
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1098.840 ; gain = 74.012
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input   32 Bit       Adders := 5     
-	   2 Input   32 Bit       Adders := 17    
+	   2 Input   32 Bit       Adders := 22    
+	   3 Input   32 Bit       Adders := 4     
 	   2 Input   27 Bit       Adders := 1     
 	   2 Input   26 Bit       Adders := 1     
-	   2 Input   25 Bit       Adders := 3     
+	   2 Input   25 Bit       Adders := 5     
 	   2 Input   16 Bit       Adders := 3     
 	   3 Input   16 Bit       Adders := 1     
 	   2 Input   10 Bit       Adders := 1     
-	   2 Input    8 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 1     
 	   2 Input    7 Bit       Adders := 1     
-	   2 Input    6 Bit       Adders := 6     
+	   2 Input    6 Bit       Adders := 5     
 	   2 Input    4 Bit       Adders := 4     
 	   2 Input    3 Bit       Adders := 3     
 	   2 Input    2 Bit       Adders := 2     
 +---Registers : 
 	              128 Bit    Registers := 2     
-	               32 Bit    Registers := 5     
+	               32 Bit    Registers := 8     
 	               26 Bit    Registers := 1     
-	               25 Bit    Registers := 3     
-	               16 Bit    Registers := 8     
-	               12 Bit    Registers := 2     
+	               25 Bit    Registers := 5     
+	               16 Bit    Registers := 9     
+	               12 Bit    Registers := 4     
 	               11 Bit    Registers := 1     
 	               10 Bit    Registers := 2     
 	                8 Bit    Registers := 20    
 	                7 Bit    Registers := 1     
 	                6 Bit    Registers := 4     
-	                4 Bit    Registers := 11    
-	                3 Bit    Registers := 7     
-	                2 Bit    Registers := 4     
-	                1 Bit    Registers := 37    
+	                4 Bit    Registers := 12    
+	                3 Bit    Registers := 8     
+	                2 Bit    Registers := 5     
+	                1 Bit    Registers := 40    
 +---Multipliers : 
-	               4x32  Multipliers := 2     
-	              32x32  Multipliers := 1     
+	               6x32  Multipliers := 1     
+	              32x32  Multipliers := 2     
+	               4x32  Multipliers := 1     
 +---Muxes : 
 	   7 Input  128 Bit        Muxes := 1     
+	   2 Input  128 Bit        Muxes := 8     
 	   8 Input  128 Bit        Muxes := 1     
-	   2 Input  128 Bit        Muxes := 5     
 	   3 Input  127 Bit        Muxes := 1     
-	   2 Input   32 Bit        Muxes := 16    
-	   3 Input   32 Bit        Muxes := 1     
-	   7 Input   32 Bit        Muxes := 4     
+	   7 Input   32 Bit        Muxes := 6     
+	   2 Input   32 Bit        Muxes := 25    
 	   4 Input   32 Bit        Muxes := 2     
 	   2 Input   27 Bit        Muxes := 2     
 	   2 Input   26 Bit        Muxes := 3     
-	   2 Input   25 Bit        Muxes := 4     
+	   2 Input   25 Bit        Muxes := 9     
 	   7 Input   25 Bit        Muxes := 3     
 	   4 Input   25 Bit        Muxes := 1     
 	   2 Input   23 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 36    
 	   3 Input   16 Bit        Muxes := 2     
-	   2 Input   16 Bit        Muxes := 35    
 	   4 Input   16 Bit        Muxes := 1     
+	  14 Input   15 Bit        Muxes := 1     
 	   3 Input   15 Bit        Muxes := 1     
 	   7 Input   15 Bit        Muxes := 1     
 	   2 Input   15 Bit        Muxes := 1     
 	   8 Input   15 Bit        Muxes := 1     
-	  14 Input   15 Bit        Muxes := 1     
-	   2 Input   10 Bit        Muxes := 2     
+	  11 Input   15 Bit        Muxes := 1     
 	   6 Input   10 Bit        Muxes := 1     
-	   2 Input    8 Bit        Muxes := 42    
 	  15 Input    8 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 42    
 	   7 Input    8 Bit        Muxes := 2     
 	   6 Input    8 Bit        Muxes := 1     
 	   8 Input    8 Bit        Muxes := 1     
-	   2 Input    7 Bit        Muxes := 115   
+	   2 Input    7 Bit        Muxes := 174   
 	   4 Input    7 Bit        Muxes := 2     
 	  12 Input    7 Bit        Muxes := 1     
-	   2 Input    6 Bit        Muxes := 77    
-	   4 Input    6 Bit        Muxes := 2     
+	   2 Input    6 Bit        Muxes := 49    
 	  15 Input    6 Bit        Muxes := 1     
+	   4 Input    6 Bit        Muxes := 2     
 	   5 Input    6 Bit        Muxes := 1     
 	   3 Input    6 Bit        Muxes := 2     
-	   2 Input    5 Bit        Muxes := 1     
-	   2 Input    4 Bit        Muxes := 41    
+	   2 Input    5 Bit        Muxes := 3     
+	   2 Input    4 Bit        Muxes := 40    
 	   3 Input    4 Bit        Muxes := 3     
 	  11 Input    4 Bit        Muxes := 1     
 	   7 Input    4 Bit        Muxes := 2     
 	   5 Input    4 Bit        Muxes := 1     
-	  10 Input    4 Bit        Muxes := 2     
-	   2 Input    3 Bit        Muxes := 18    
-	   7 Input    3 Bit        Muxes := 1     
+	  10 Input    4 Bit        Muxes := 3     
 	   8 Input    3 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 16    
+	   7 Input    3 Bit        Muxes := 1     
 	  10 Input    3 Bit        Muxes := 2     
-	   3 Input    2 Bit        Muxes := 3     
-	   2 Input    2 Bit        Muxes := 9     
-	   7 Input    2 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 8     
+	   3 Input    2 Bit        Muxes := 4     
+	   7 Input    2 Bit        Muxes := 3     
 	  10 Input    2 Bit        Muxes := 1     
-	   7 Input    1 Bit        Muxes := 41    
-	   2 Input    1 Bit        Muxes := 318   
-	   8 Input    1 Bit        Muxes := 6     
-	   4 Input    1 Bit        Muxes := 4     
-	  11 Input    1 Bit        Muxes := 2     
-	   3 Input    1 Bit        Muxes := 20    
 	  15 Input    1 Bit        Muxes := 7     
+	   7 Input    1 Bit        Muxes := 44    
+	   2 Input    1 Bit        Muxes := 334   
+	   4 Input    1 Bit        Muxes := 5     
+	  11 Input    1 Bit        Muxes := 2     
+	   8 Input    1 Bit        Muxes := 6     
+	   3 Input    1 Bit        Muxes := 20    
+	  10 Input    1 Bit        Muxes := 11    
 	   5 Input    1 Bit        Muxes := 2     
-	  10 Input    1 Bit        Muxes := 9     
 	   6 Input    1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -283,6 +294,122 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
+DSP Report: Generating DSP a_tmp2, operation Mode is: A*B.
+DSP Report: operator a_tmp2 is absorbed into DSP a_tmp2.
+DSP Report: operator a_tmp2 is absorbed into DSP a_tmp2.
+DSP Report: Generating DSP a_tmp2, operation Mode is: A*B.
+DSP Report: operator a_tmp2 is absorbed into DSP a_tmp2.
+DSP Report: operator a_tmp2 is absorbed into DSP a_tmp2.
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[31] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[30] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[29] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[28] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[27] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[26] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[25] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[24] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[23] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[22] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[21] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[20] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[19] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[18] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[17] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[16] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[15] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[14] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[13] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[12] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[11] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[10] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[9] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[8] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[7] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB0 has port min_quotient2[6] driven by constant 0
+INFO: [Synth 8-3886] merging instance 'u_lcd/pow_cnt_reg[6]' (FDCE) to 'u_lcd/pow_cnt_reg[7]'
+INFO: [Synth 8-3886] merging instance 'u_lcd/pow_cnt_reg[7]' (FDCE) to 'u_lcd/pow_cnt_reg[8]'
+INFO: [Synth 8-3886] merging instance 'u_lcd/pow_cnt_reg[8]' (FDCE) to 'u_lcd/pow_cnt_reg[9]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd/\pow_cnt_reg[9] )
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[0]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[1]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[2]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[3]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[4]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[5]' (FDPE) to 'lcd_line1_flat_reg[117]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[6]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[126]' (FDCE) to 'lcd_line1_flat_reg[118]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[119]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[118]' (FDCE) to 'lcd_line1_flat_reg[110]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[117]' (FDPE) to 'lcd_line1_flat_reg[109]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[111]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[110]' (FDCE) to 'lcd_line1_flat_reg[102]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[109]' (FDPE) to 'lcd_line1_flat_reg[101]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[103]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[101]' (FDPE) to 'lcd_line1_flat_reg[93]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[95]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[93]' (FDPE) to 'lcd_line1_flat_reg[61]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[87]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[79]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[71]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[70]' (FDCE) to 'lcd_line1_flat_reg[62]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[68]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[67]' (FDCE) to 'lcd_line1_flat_reg[46]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[66]' (FDCE) to 'lcd_line1_flat_reg[57]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[65]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[63]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[61]' (FDPE) to 'lcd_line1_flat_reg[53]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[59]' (FDCE) to 'lcd_line1_flat_reg[58]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[58]' (FDCE) to 'lcd_line1_flat_reg[56]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[56]' (FDCE) to 'lcd_line1_flat_reg[54]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[55]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[54]' (FDCE) to 'lcd_line1_flat_reg[50]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[53]' (FDPE) to 'lcd_line1_flat_reg[45]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[52]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[51]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[49]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[48]' (FDCE) to 'lcd_line1_flat_reg[44]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[47]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[46]' (FDCE) to 'lcd_line1_flat_reg[42]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[45]' (FDPE) to 'lcd_line1_flat_reg[37]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[44]' (FDCE) to 'lcd_line1_flat_reg[43]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[43]' (FDCE) to 'lcd_line1_flat_reg[41]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[42]' (FDCE) to 'lcd_line1_flat_reg[40]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[40]' (FDCE) to 'lcd_line1_flat_reg[36]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[39]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[38]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[37]' (FDPE) to 'lcd_line1_flat_reg[29]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[36]' (FDCE) to 'lcd_line1_flat_reg[35]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[35]' (FDCE) to 'lcd_line1_flat_reg[33]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[34]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[32]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[31]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[30]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[29]' (FDPE) to 'lcd_line1_flat_reg[21]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[28]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[27]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[26]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[25]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[24]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[23]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[22]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[21]' (FDPE) to 'lcd_line1_flat_reg[13]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[20]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[19]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[18]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[17]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[16]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[15]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[14]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\lcd_line1_flat_reg[13] )
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[12]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[11]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[10]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[9]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[8]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3886] merging instance 'lcd_line1_flat_reg[7]' (FDCE) to 'lcd_line1_flat_reg[127]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lcd_line1_flat_reg[127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd/lcd_rw_reg)
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/puzzle.v:388]
 DSP Report: Generating DSP target_answer0, operation Mode is: A*B.
 DSP Report: operator target_answer0 is absorbed into DSP target_answer0.
 DSP Report: operator target_answer0 is absorbed into DSP target_answer0.
@@ -295,10 +422,97 @@ DSP Report: operator target_answer0 is absorbed into DSP target_answer0.
 DSP Report: Generating DSP target_answer0, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: operator target_answer0 is absorbed into DSP target_answer0.
 DSP Report: operator target_answer0 is absorbed into DSP target_answer0.
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[127] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[126] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[119] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[118] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[111] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[110] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[103] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[102] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[95] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[94] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[87] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[86] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[79] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[78] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[71] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[70] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[63] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[62] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[55] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[54] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[47] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[46] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[39] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[38] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[31] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[30] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[23] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[22] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[15] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[14] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[7] driven by constant 0
+WARNING: [Synth 8-3917] design puzzle__GB2 has port O10[6] driven by constant 0
+INFO: [Synth 8-3886] merging instance 'feedback_cnt_reg[27]' (FDCE) to 'feedback_cnt_reg[31]'
+INFO: [Synth 8-3886] merging instance 'feedback_cnt_reg[28]' (FDCE) to 'feedback_cnt_reg[31]'
+INFO: [Synth 8-3886] merging instance 'feedback_cnt_reg[29]' (FDCE) to 'feedback_cnt_reg[31]'
+INFO: [Synth 8-3886] merging instance 'feedback_cnt_reg[30]' (FDCE) to 'feedback_cnt_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\feedback_cnt_reg[31] )
+INFO: [Synth 8-3886] merging instance 'cur_div_reg[0]' (FDCE) to 'cur_div_reg[15]'
+INFO: [Synth 8-3886] merging instance 'cur_div_reg[1]' (FDCE) to 'cur_div_reg[15]'
+INFO: [Synth 8-3886] merging instance 'cur_div_reg[2]' (FDCE) to 'cur_div_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cur_div_reg[15] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nickname_reg[15][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nickname_reg[15][7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nickname_reg[14][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nickname_reg[14][7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nickname_reg[13][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nickname_reg[13][7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nickname_reg[12][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nickname_reg[12][7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nickname_reg[11][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nickname_reg[11][7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nickname_reg[10][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nickname_reg[10][7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nickname_reg[9][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nickname_reg[9][7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nickname_reg[8][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nickname_reg[8][7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nickname_reg[7][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nickname_reg[7][7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nickname_reg[6][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nickname_reg[6][7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nickname_reg[5][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nickname_reg[5][7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nickname_reg[4][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nickname_reg[4][7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nickname_reg[3][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nickname_reg[3][7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nickname_reg[2][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nickname_reg[2][7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nickname_reg[1][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nickname_reg[1][7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nickname_reg[0][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nickname_reg[0][7] )
 DSP Report: Generating DSP computed_result0, operation Mode is: A*B.
 DSP Report: operator computed_result0 is absorbed into DSP computed_result0.
+INFO: [Synth 8-3886] merging instance 'u_calculator/cur_div_reg[0]' (FDCE) to 'u_calculator/cur_div_reg[1]'
+INFO: [Synth 8-3886] merging instance 'u_calculator/cur_div_reg[1]' (FDCE) to 'u_calculator/cur_div_reg[2]'
+INFO: [Synth 8-3886] merging instance 'u_calculator/queued_char_data_reg[4]' (FDCE) to 'u_calculator/queued_char_data_reg[5]'
+INFO: [Synth 8-3886] merging instance 'u_calculator/queued_char_data_reg[6]' (FDCE) to 'u_calculator/queued_char_data_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_calculator/\queued_char_data_reg[7] )
+INFO: [Synth 8-3886] merging instance 'u_calculator/cur_div_reg[2]' (FDCE) to 'u_calculator/cur_div_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_calculator/\cur_div_reg[15] )
+INFO: [Synth 8-3886] merging instance 'u_calculator/buzz_mode_reg[1]' (FDCE) to 'u_calculator/buzz_mode_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_calculator/\buzz_mode_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_calculator/seven_seg_dp_reg)
+INFO: [Synth 8-3886] merging instance 'u_calculator/queued_digit_data_reg[2]' (FDCE) to 'u_calculator/queued_char_data_reg[2]'
+INFO: [Synth 8-3886] merging instance 'u_calculator/queued_digit_data_reg[3]' (FDCE) to 'u_calculator/queued_char_data_reg[3]'
+INFO: [Synth 8-3886] merging instance 'u_calculator/queued_digit_data_reg[1]' (FDCE) to 'u_calculator/queued_char_data_reg[1]'
+INFO: [Synth 8-3886] merging instance 'u_calculator/queued_digit_data_reg[0]' (FDCE) to 'u_calculator/queued_char_data_reg[0]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 1256.609 ; gain = 227.699
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:53 . Memory (MB): peak = 1098.840 ; gain = 74.012
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -308,10 +522,12 @@ DSP: Preliminary Mapping	Report (see note below)
 +------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
 +------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|top         | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|top         | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|top         | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|top         | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|puzzle      | A*B            | 15     | 5      | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|puzzle      | A*B            | 18     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|puzzle__GB2 | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|puzzle__GB2 | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|puzzle__GB2 | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|puzzle__GB2 | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |calculator  | A*B            | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 +------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
@@ -323,19 +539,19 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:26 ; elapsed = 00:01:27 . Memory (MB): peak = 1256.609 ; gain = 227.699
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:01:02 . Memory (MB): peak = 1101.852 ; gain = 77.023
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:26 ; elapsed = 00:01:27 . Memory (MB): peak = 1256.609 ; gain = 227.699
+Finished Timing Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:01:03 . Memory (MB): peak = 1106.375 ; gain = 81.547
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:28 ; elapsed = 00:01:29 . Memory (MB): peak = 1256.609 ; gain = 227.699
+Finished Technology Mapping : Time (s): cpu = 00:00:43 ; elapsed = 00:01:05 . Memory (MB): peak = 1159.961 ; gain = 135.133
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -353,37 +569,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:31 ; elapsed = 00:01:32 . Memory (MB): peak = 1256.609 ; gain = 227.699
+Finished IO Insertion : Time (s): cpu = 00:00:46 ; elapsed = 00:01:09 . Memory (MB): peak = 1164.266 ; gain = 139.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:31 ; elapsed = 00:01:32 . Memory (MB): peak = 1256.609 ; gain = 227.699
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:47 ; elapsed = 00:01:09 . Memory (MB): peak = 1164.266 ; gain = 139.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:31 ; elapsed = 00:01:33 . Memory (MB): peak = 1256.609 ; gain = 227.699
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:47 ; elapsed = 00:01:09 . Memory (MB): peak = 1164.266 ; gain = 139.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:31 ; elapsed = 00:01:33 . Memory (MB): peak = 1256.609 ; gain = 227.699
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:47 ; elapsed = 00:01:09 . Memory (MB): peak = 1164.266 ; gain = 139.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:31 ; elapsed = 00:01:33 . Memory (MB): peak = 1256.609 ; gain = 227.699
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:47 ; elapsed = 00:01:10 . Memory (MB): peak = 1164.266 ; gain = 139.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:31 ; elapsed = 00:01:33 . Memory (MB): peak = 1256.609 ; gain = 227.699
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:48 ; elapsed = 00:01:10 . Memory (MB): peak = 1164.266 ; gain = 139.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -400,42 +616,42 @@ Report Cell Usage:
 |      |Cell    |Count |
 +------+--------+------+
 |1     |BUFG    |     2|
-|2     |CARRY4  |  2163|
-|3     |DSP48E1 |     4|
-|4     |LUT1    |   465|
-|5     |LUT2    |  1863|
-|6     |LUT3    |  4931|
-|7     |LUT4    |  1639|
-|8     |LUT5    |   728|
-|9     |LUT6    |  2314|
-|10    |MUXF7   |    18|
-|11    |MUXF8   |     3|
-|12    |FDCE    |   780|
-|13    |FDPE    |    44|
-|14    |FDRE    |    57|
-|15    |IBUF    |    19|
-|16    |OBUF    |    35|
+|2     |CARRY4  |  2958|
+|3     |DSP48E1 |     6|
+|5     |LUT1    |   594|
+|6     |LUT2    |  3236|
+|7     |LUT3    |  5584|
+|8     |LUT4    |  1922|
+|9     |LUT5    |  1220|
+|10    |LUT6    |  3231|
+|11    |MUXF7   |    19|
+|12    |MUXF8   |     3|
+|13    |FDCE    |   864|
+|14    |FDPE    |    50|
+|15    |FDRE    |    73|
+|16    |IBUF    |    19|
+|17    |OBUF    |    36|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:31 ; elapsed = 00:01:33 . Memory (MB): peak = 1256.609 ; gain = 227.699
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:48 ; elapsed = 00:01:10 . Memory (MB): peak = 1164.266 ; gain = 139.438
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:24 ; elapsed = 00:01:31 . Memory (MB): peak = 1256.609 ; gain = 168.074
-Synthesis Optimization Complete : Time (s): cpu = 00:01:31 ; elapsed = 00:01:33 . Memory (MB): peak = 1256.609 ; gain = 227.699
+Synthesis finished with 0 errors, 0 critical warnings and 58 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:41 ; elapsed = 00:01:08 . Memory (MB): peak = 1164.266 ; gain = 65.426
+Synthesis Optimization Complete : Time (s): cpu = 00:00:48 ; elapsed = 00:01:10 . Memory (MB): peak = 1164.266 ; gain = 139.438
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.124 . Memory (MB): peak = 1256.609 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 2188 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.195 . Memory (MB): peak = 1177.230 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2986 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1256.609 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1178.246 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-27 Infos, 26 Warnings, 4 Critical Warnings and 0 Errors encountered.
+166 Infos, 84 Warnings, 4 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:37 ; elapsed = 00:01:39 . Memory (MB): peak = 1256.609 ; gain = 227.699
-INFO: [Common 17-1381] The checkpoint 'C:/Users/myatt/Desktop/circuit porject/project_1/project_1.runs/synth_1/top.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:54 ; elapsed = 00:01:17 . Memory (MB): peak = 1178.246 ; gain = 153.418
+INFO: [Common 17-1381] The checkpoint 'C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/project_1/project_1.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Dec  2 20:46:05 2025...
+INFO: [Common 17-206] Exiting Vivado at Tue Dec  9 19:18:37 2025...

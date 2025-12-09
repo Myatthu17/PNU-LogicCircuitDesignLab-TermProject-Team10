@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "C:/Users/myatt/Desktop/circuit porject/project_1/project_1.runs/impl_1/top.tcl"
+  variable script "C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/project_1/project_1.runs/impl_1/top.tcl"
   variable category "vivado_impl"
 }
 
@@ -114,6 +114,7 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 
@@ -125,10 +126,10 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 1
-  set_param synth.incrementalSynthesisCache C:/Users/myatt/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-18356-DESKTOP-637IPB4/incrSyn
+  set_param synth.incrementalSynthesisCache C:/Users/myatt/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-12488-DESKTOP-637IPB4/incrSyn
   set_param xicom.use_bs_reader 1
   open_checkpoint top_routed.dcp
-  set_property webtalk.parent_dir {C:/Users/myatt/Desktop/circuit porject/project_1/project_1.cache/wt} [current_project]
+  set_property webtalk.parent_dir {C:/Users/myatt/Desktop/PNU-LogicCircuitDesignLab-TermProject-Team10/circuit porject/project_1/project_1.cache/wt} [current_project]
 set_property TOP top [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }

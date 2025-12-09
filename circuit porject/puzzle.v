@@ -60,6 +60,11 @@ reg  [3:0]  number;            // detected key index (0..10)
 reg         number_valid;      // 1 when a new key press is detected
 reg  [2:0]  game_state;        // S_MODE..S_OVER
 reg  [31:0] rand_counter;
+reg  [31:0] rand_seed_a;
+reg  [31:0] rand_seed_b;
+reg [31:0] latched_input;
+reg latched_timeout;
+reg         in_game;            // 1 when game is active (after S_NAME)
 
 // extra reg for swapping A/B in subtraction
 reg  [31:0] swap_tmp;
@@ -80,65 +85,63 @@ function [7:0] map_letter;
     input [1:0] cnt;
     begin
         case (btn)
-            4'd1: begin   // a,b,c
+            4'd2: begin   // a,b,c
                 case (cnt)
                     2'd0: map_letter = "a";
                     2'd1: map_letter = "b";
                     default: map_letter = "c";   // 2,3 -> c
                 endcase
             end
-            4'd2: begin   // d,e,f
+            4'd3: begin   // d,e,f
                 case (cnt)
                     2'd0: map_letter = "d";
                     2'd1: map_letter = "e";
                     default: map_letter = "f";   // 2,3 -> f
                 endcase
             end
-            4'd3: begin   // g,h,i,j (4 letters)
+            4'd4: begin   // g,h,i
                 case (cnt)
                     2'd0: map_letter = "g";
                     2'd1: map_letter = "h";
-                    2'd2: map_letter = "i";
-                    default: map_letter = "j";   // 3 -> j
+                    default: map_letter = "i";
                 endcase
             end
-            4'd4: begin   // k,l,m
+            4'd5: begin   // j, k,l
                 case (cnt)
-                    2'd0: map_letter = "k";
-                    2'd1: map_letter = "l";
-                    default: map_letter = "m";   // 2,3 -> m
+                    2'd0: map_letter = "j";
+                    2'd1: map_letter = "k";
+                    default: map_letter = "l"; 
                 endcase
             end
-            4'd5: begin   // n,o,p
+            4'd6: begin   // m, n,o
                 case (cnt)
-                    2'd0: map_letter = "n";
-                    2'd1: map_letter = "o";
-                    default: map_letter = "p";   // 2,3 -> p
+                    2'd0: map_letter = "m";
+                    2'd1: map_letter = "n";
+                    default: map_letter = "o";
                 endcase
             end
-            4'd6: begin   // q,r,s
+            4'd7: begin   // p, q,r,s
                 case (cnt)
-                    2'd0: map_letter = "q";
-                    2'd1: map_letter = "r";
-                    default: map_letter = "s";   // 2,3 -> s
+                    2'd0: map_letter = "p";
+                    2'd1: map_letter = "q";
+                    2'd2: map_letter = "r";
+                    default: map_letter = "s";
                 endcase
             end
-            4'd7: begin   // t,u,v
+            4'd8: begin   // t,u,v
                 case (cnt)
                     2'd0: map_letter = "t";
                     2'd1: map_letter = "u";
                     default: map_letter = "v";   // 2,3 -> v
                 endcase
             end
-            4'd8: begin   // w,x,y
+            4'd9: begin   // w,x,y,z
                 case (cnt)
                     2'd0: map_letter = "w";
                     2'd1: map_letter = "x";
-                    default: map_letter = "y";   // 2,3 -> y
+                    2'd2: map_letter = "y";
+                    default: map_letter = "z";
                 endcase
-            end
-            4'd9: begin   // z only
-                map_letter = "z";
             end
             default: map_letter = " ";
         endcase
@@ -150,9 +153,30 @@ function [1:0] max_index;
     input [3:0] btn;
     begin
         case (btn)
-            4'd3: max_index = 2'd3;   // g,h,i,j
-            4'd9: max_index = 2'd0;   // z only
+            4'd7: max_index = 2'd3;  
+            4'd9: max_index = 2'd3; 
             default: max_index = 2'd2; // others: 3 letters
+        endcase
+    end
+endfunction
+
+function [7:0] digit_to_ascii;
+    input [31:0] d;
+    begin
+        digit_to_ascii = 8'd48 + (d % 10); // last digit only
+    end
+endfunction
+
+// Extract individual digits from a number (0-999)
+function [7:0] get_digit;
+    input [31:0] num;
+    input [1:0]  pos;  // 0=ones, 1=tens, 2=hundreds
+    begin
+        case (pos)
+            2'd0: get_digit = 8'd48 + ((num / 1) % 10);      // ones
+            2'd1: get_digit = 8'd48 + ((num / 10) % 10);     // tens
+            2'd2: get_digit = 8'd48 + ((num / 100) % 10);     // hundreds
+            default: get_digit = 8'd48;
         endcase
     end
 endfunction
@@ -166,10 +190,8 @@ reg  [31:0] min_value, max_value;
 
 // For display (show last two digits of operands)
 reg  [31:0] a_tmp, b_tmp;
-reg  [31:0] span;
-reg  [31:0] diff_min;
 reg  [1:0]  op_tmp;
-reg  [3:0]  a_tens, a_ones, b_tens, b_ones;
+reg  [31:0] min_quotient, max_quotient;  // for division calculation
 
 // Loop counters
 integer     lcd_index1;
@@ -294,6 +316,19 @@ function [31:0] rand_range(input [31:0] min, input [31:0] max);
     end
 endfunction
 
+// random in [min..max] with explicit seed to avoid identical successive draws
+function [31:0] rand_range_seed(input [31:0] seed, input [31:0] min, input [31:0] max);
+    reg [31:0] span_local;
+    begin
+        if (max <= min)
+            rand_range_seed = min;
+        else begin
+            span_local = max - min + 1;
+            rand_range_seed = min + (seed % span_local);
+        end
+    end
+endfunction
+
 //=========================
 // Rising-edge detector for BTN_NUM -> number + number_valid
 //=========================
@@ -332,12 +367,27 @@ always @(*) begin
         end
         2'b01: begin   // MEDIUM
             min_value = 10;
-            max_value = 99;
+            max_value = 29;
         end
         default: begin // HARD
-            min_value = 100;
-            max_value = 999;
+            min_value = 30;
+            max_value = 50;
         end
+    endcase
+end
+
+//=========================
+// Calculate target_answer from stored operands (combinational)
+// This ensures target_answer is ALWAYS in sync with operandA/operandB/operator
+// and eliminates any timing issues
+//=========================
+always @(*) begin
+    case (operator)
+        2'd0: target_answer = operandA + operandB;      // +
+        2'd1: target_answer = operandA - operandB;      // -
+        2'd2: target_answer = operandA * operandB;      // *
+        2'd3: target_answer = (operandB != 0) ? (operandA / operandB) : 0; // /
+        default: target_answer = 0;
     endcase
 end
 
@@ -362,6 +412,7 @@ always @(posedge clk or posedge rst) begin
         name_next_cnt   <= 2'd0;
         check_done      <= 1'b0;
         feedback_cnt    <= 32'd0;
+        in_game         <= 1'b0;
         for (i = 0; i < 16; i = i + 1)
             nickname[i] <= 8'h20;
     end else begin
@@ -372,8 +423,8 @@ always @(posedge clk or posedge rst) begin
             S_MODE: begin
                 // "Select Mode:"
                 lcd_line1_flat <= { "Select Mode:    " };
-                // "0:E 1:M 2:H   "
-                lcd_line2_flat <= { "0:E 1:M 2:H    " };
+                
+                lcd_line2_flat <= { "1:E 2:M 3:H     " };
 
                 // reset name input each time we're in mode select
                 nick_index      <= 0;
@@ -381,18 +432,19 @@ always @(posedge clk or posedge rst) begin
                 name_press_cnt  <= 2'd0;
                 check_done      <= 1'b0;
                 feedback_cnt    <= 32'd0;
+                in_game         <= 1'b0;  // reset game flag
                 for (i = 0; i < 16; i = i + 1)
                     nickname[i] <= 8'h20;
 
-                // pick mode with buttons (only on new key press)
-                if (number_valid) begin
-                    if (number == 0) begin
+                // pick mode with buttons (only on new key press and not in active game)
+                if (number_valid && !in_game) begin
+                    if (number == 1) begin
                         difficulty_mode <= 2'b00;   // EASY
                         game_state      <= S_NAME;
-                    end else if (number == 1) begin
+                    end else if (number == 2) begin
                         difficulty_mode <= 2'b01;   // MEDIUM
                         game_state      <= S_NAME;
-                    end else if (number == 2) begin
+                    end else if (number == 3) begin
                         difficulty_mode <= 2'b10;   // HARD
                         game_state      <= S_NAME;
                     end
@@ -464,6 +516,7 @@ always @(posedge clk or posedge rst) begin
                 // ENTER -> start game
                 if (BTN_ENTER && !enter_pressed) begin
                     enter_pressed <= 1;
+                    in_game       <= 1'b1;  // mark that game has started
                     game_state    <= S_GEN;  // generate puzzle
                 end else if (!BTN_ENTER) begin
                     enter_pressed <= 0;
@@ -477,36 +530,21 @@ always @(posedge clk or posedge rst) begin
             // Hard: +, -, *, / (division gives integer result)
             //--------------------------------------
             S_GEN: begin
+                // Ignore all button presses in S_GEN to prevent accidental mode selection
                 check_done   <= 1'b0;
                 feedback_cnt <= 32'd0;
 
-                // span of allowed values
-                span = max_value - min_value + 1;
-                if (span < 2)
-                    span = 2;
+                
+                
 
-                // minimum difference between A and B (for +,-,*, not strictly needed for easy)
-                if (span >= 20)
-                    diff_min = 10;
-                else if (span >= 10)
-                    diff_min = 5;
-                else
-                    diff_min = 1;
+                // Use different seeds to avoid identical operands
+                rand_seed_a = rand_counter;
+                rand_seed_b = rand_counter + 32'h9E37_79B9; // golden-ratio salt
 
-                // Base random values
-                a_tmp = min_value + (rand_counter        % span);
-                b_tmp = min_value + ((rand_counter >> 7) % span);
+                a_tmp = rand_range_seed(rand_seed_a, min_value, max_value);
+                b_tmp = rand_range_seed(rand_seed_b, min_value, max_value);
 
-                // Enforce minimum difference |A - B| >= diff_min (for + and -)
-                if ( (a_tmp > b_tmp ? (a_tmp - b_tmp) : (b_tmp - a_tmp)) < diff_min ) begin
-                    if (a_tmp + diff_min <= max_value)
-                        b_tmp = a_tmp + diff_min;
-                    else if (a_tmp >= min_value + diff_min)
-                        b_tmp = a_tmp - diff_min;
-                    else
-                        // fallback: place B roughly in middle of range
-                        b_tmp = min_value + (span >> 1);
-                end
+                
 
                 // Choose operator depending on difficulty
                 // 00: 0..1 => +, -
@@ -519,62 +557,85 @@ always @(posedge clk or posedge rst) begin
                 else
                     op_tmp = rand_num(4) - 1;   // 0..3 (adds division)
 
-                // For subtraction, ensure A >= B so result is not negative
-                if (op_tmp == 2'd1 && a_tmp < b_tmp) begin
+                // For subtraction, ensure A > B so result is positive
+                if (op_tmp == 2'd1 && a_tmp <= b_tmp) begin
                     swap_tmp = a_tmp;
                     a_tmp    = b_tmp;
                     b_tmp    = swap_tmp;
+                    // If A == B after swap, increment A to ensure A > B
+                    if (a_tmp == b_tmp && a_tmp < max_value)
+                        a_tmp = a_tmp + 1;
+                    else if (a_tmp == b_tmp)
+                        b_tmp = b_tmp - 1;
                 end
 
                 // Special handling for division in HARD mode
                 if (difficulty_mode == 2'b10 && op_tmp == 2'd3) begin
                     // generate divisor 2..9
-                    b_tmp = rand_range(2, 9);
-                    // generate quotient 5..30
-                    a_tmp = rand_range(5, 30);
-                    // make A a multiple of divisor
+                    b_tmp = rand_range_seed(rand_seed_b, 2, 9);
+                    // generate quotient within valid range for hard mode (30..50)
+                    // We want: min_value <= quotient * divisor <= max_value
+                    // Calculate valid quotient range
+                    min_quotient = (min_value + b_tmp - 1) / b_tmp;  // minimum quotient (ceiling)
+                    if (min_quotient < 1) min_quotient = 1;  // ensure at least 1
+                    max_quotient = max_value / b_tmp;  // maximum quotient (floor)
+                    if (max_quotient < min_quotient) max_quotient = min_quotient;  // ensure valid range
+                    // Generate quotient in valid range
+                    a_tmp = rand_range_seed(rand_seed_b + 32'h7F4A_7C15, min_quotient, max_quotient);
+                    // make A a multiple of divisor (this is the dividend)
                     a_tmp = a_tmp * b_tmp;
-
-                    // A might be < min_value, so bump if needed
+                    
+                    // Final bounds check and correction
                     if (a_tmp < min_value) begin
-                        a_tmp = min_value + ((rand_counter % 10) * b_tmp);
+                        // Round up to next multiple of b_tmp
+                        a_tmp = ((min_value + b_tmp - 1) / b_tmp) * b_tmp;
                     end
-
-                    // clamp to max_value if too big
-                    if (a_tmp > max_value)
-                        a_tmp = max_value - (max_value % b_tmp);
-
-                    // just in case, avoid zero
-                    if (a_tmp == 0)
-                        a_tmp = b_tmp;
+                    if (a_tmp > max_value) begin
+                        // Round down to previous multiple of b_tmp
+                        a_tmp = (max_value / b_tmp) * b_tmp;
+                    end
+                    // Ensure we have a valid non-zero dividend
+                    if (a_tmp == 0 || a_tmp < b_tmp)
+                        a_tmp = b_tmp * 2;  // ensure at least 2*divisor
+                    // Ensure b_tmp stays as divisor (2..9), don't clamp it
+                end else begin
+                    // clamp to valid range for non-division operations
+                    if (a_tmp < min_value)
+                        a_tmp = min_value;
+                    else if (a_tmp > max_value) 
+                        a_tmp = max_value;
+                    if (b_tmp < min_value)
+                        b_tmp = min_value;
+                    else if (b_tmp > max_value) 
+                        b_tmp = max_value;
+                    // just in case, avoid zero for division (but this shouldn't happen for +,-,*)
+                    if (b_tmp == 0)
+                        b_tmp = 1;
                 end
 
+                // Final safety check: ensure values are within displayable range (0-99)
+                // This prevents any display issues with invalid values
+                if (a_tmp > 99) a_tmp = 99;
+                if (b_tmp > 99) b_tmp = 99;
+
                 // Store operands & operator
+                // target_answer will be automatically calculated from these in combinational block
                 operandA <= a_tmp;
                 operandB <= b_tmp;
                 operator <= op_tmp;
 
-                // Positive numeric result
-                case (op_tmp)
-                    2'd0: target_answer <= a_tmp + b_tmp;      // +
-                    2'd1: target_answer <= a_tmp - b_tmp;      // -
-                    2'd2: target_answer <= a_tmp * b_tmp;      // *
-                    2'd3: target_answer <= (b_tmp != 0) ? (a_tmp / b_tmp) : 0; // /
-                    default: target_answer <= 0;
-                endcase
-
-                // Precompute last two digits for display
-                a_ones = a_tmp % 10;
-                a_tens = (a_tmp / 10) % 10;
-                b_ones = b_tmp % 10;
-                b_tens = (b_tmp / 10) % 10;
-
                 // Clear line1 then build "AA op BB = ?"
                 lcd_line1_flat <= 128'h20202020202020202020202020202020;
 
-                // A (2 digits)
-                lcd_line1_flat[127-:8] <= a_tens + 8'd48;
-                lcd_line1_flat[119-:8] <= a_ones + 8'd48;
+                // A (2 digits) - use get_digit function for proper extraction
+                // show leading space if a_tmp < 10 to avoid leading zero
+                if (a_tmp < 10) begin
+                    lcd_line1_flat[127-:8] <= 8'h20;  // space
+                    lcd_line1_flat[119-:8] <= get_digit(a_tmp, 2'd0);  // ones digit
+                end else begin
+                    lcd_line1_flat[127-:8] <= get_digit(a_tmp, 2'd1);  // tens digit
+                    lcd_line1_flat[119-:8] <= get_digit(a_tmp, 2'd0);  // ones digit
+                end
 
                 // operator
                 case (op_tmp)
@@ -582,12 +643,17 @@ always @(posedge clk or posedge rst) begin
                     2'd1: lcd_line1_flat[111-:8] <= "-";  // -
                     2'd2: lcd_line1_flat[111-:8] <= "*";  // *
                     2'd3: lcd_line1_flat[111-:8] <= "/";  // /
-                    default: lcd_line1_flat[111-:8] <= " "; 
+                    default: lcd_line1_flat[111-:8] <= " ";
                 endcase
 
-                // B (2 digits)
-                lcd_line1_flat[103-:8] <= b_tens + 8'd48;
-                lcd_line1_flat[95-:8]  <= b_ones + 8'd48;
+                // B (2 digits) - use get_digit function for proper extraction
+                if (b_tmp < 10) begin
+                    lcd_line1_flat[103-:8] <= 8'h20;  // space
+                    lcd_line1_flat[95-:8]  <= get_digit(b_tmp, 2'd0);  // ones digit
+                end else begin
+                    lcd_line1_flat[103-:8] <= get_digit(b_tmp, 2'd1);  // tens digit
+                    lcd_line1_flat[95-:8]  <= get_digit(b_tmp, 2'd0);  // ones digit
+                end
 
                 // = ?
                 lcd_line1_flat[87-:8]  <= "=";
@@ -596,58 +662,67 @@ always @(posedge clk or posedge rst) begin
                 // Clear line2, go to input
                 lcd_index1 <= 0;
                 user_input <= 0;
+                is_timeout <= 0;
+                latched_input <= 0;
+                latched_timeout <= 1'b0;
                 for (i = 0; i < 16; i = i + 1)
                     lcd_line2_flat[127-8*i -: 8] <= 8'h20;
 
                 game_state <= S_INPUT;
             end
-
             //--------------------------------------
             // S_INPUT: Answer Input (with timeout + BACKSPACE)
             //--------------------------------------
             S_INPUT: begin
-                if (timeout) begin
-                    // time is up -> treat as timeout check
-                    is_timeout    <= 1'b1;
-                    enter_pressed <= 1'b0;
-                    game_state    <= S_CHECK;
-                end else begin
-                    if (number_valid) begin
-                        // NUMERIC digit 0..9
-                        if (number <= 4'd9 && lcd_index1 < 16) begin
-                            user_input <= user_input * 10 + number;
-                            lcd_line2_flat[127-8*lcd_index1 -: 8] <= 8'd48 + number;
-                            lcd_index1 <= lcd_index1 + 1;
-                        end
-                        // BACKSPACE (button index 10)
-                        else if (number == KEY_BACKSPACE && lcd_index1 > 0) begin
-                            user_input <= user_input / 10;
-                            lcd_index1 <= lcd_index1 - 1;
-                            lcd_line2_flat[127-8*(lcd_index1-1) -: 8] <= 8'h20;
-                        end
-                    end
-
-                    // ENTER = check answer (not timeout)
-                    if (BTN_ENTER && !enter_pressed) begin
-                        enter_pressed <= 1;
-                        is_timeout    <= 1'b0;
-                        game_state    <= S_CHECK;
-                    end else if (!BTN_ENTER) begin
-                        enter_pressed <= 0;
-                    end
-                end
+    // If timeout occurs before ENTER
+    if (timeout) begin
+        latched_input   <= user_input;  // latch whatever was typed
+        latched_timeout <= 1'b1;        // indicate timeout
+        is_timeout      <= 1'b1;        // set timeout flag for S_CHECK
+        enter_pressed   <= 0;
+        game_state      <= S_CHECK;
+    end else begin
+        if (number_valid) begin
+            // NUMERIC digit 0..9
+            if (number <= 4'd9 && lcd_index1 < 16) begin
+                user_input <= user_input * 10 + number;
+                lcd_line2_flat[127-8*lcd_index1 -: 8] <= digit_to_ascii(number);
+                lcd_index1 <= lcd_index1 + 1;
             end
+            // BACKSPACE
+            else if (number == KEY_BACKSPACE && lcd_index1 > 0) begin
+                user_input <= user_input / 10;
+                lcd_index1 <= lcd_index1 - 1;
+                lcd_line2_flat[127-8*(lcd_index1-1) -: 8] <= 8'h20;
+            end
+        end
+
+        // ENTER pressed: always take the answer regardless of timeout
+        if (BTN_ENTER && !enter_pressed) begin
+            enter_pressed   <= 1;
+            latched_input   <= user_input;  // latch current typed number
+            latched_timeout <= 1'b0;        // ignore timeout if user entered
+            is_timeout      <= 1'b0;        // clear timeout flag
+            game_state      <= S_CHECK;
+        end else if (!BTN_ENTER) begin
+            enter_pressed <= 0;
+        end
+    end
+end
+
+
 
             //--------------------------------------
             // S_CHECK: Check Answer + HOLD message
             //--------------------------------------
             S_CHECK: begin
+                // Ignore all button presses in S_CHECK to prevent accidental mode selection
                 if (!check_done) begin
                     // first cycle in S_CHECK: compute result & set messages
                     new_lives  = lives;
                     disp_score = score;   // default: current score
 
-                    if (user_input == target_answer && !is_timeout) begin
+                    if (latched_input == target_answer && !is_timeout) begin
                         // Correct
                         disp_score = score + 1;
                         score      <= disp_score;
@@ -665,9 +740,22 @@ always @(posedge clk or posedge rst) begin
 
                     lives <= new_lives;
 
-                    // Row2: "Score: X"
+                    // Row2: "Score: XXX" (up to 3 digits)
                     lcd_line2_flat <= { "Score:          " };
-                    lcd_line2_flat[71-:8] <= (disp_score % 10) + 8'd48;  // last digit
+                    // Display score with proper multi-digit formatting
+                    if (disp_score >= 100) begin
+                        // 3 digits: hundreds, tens, ones
+                        lcd_line2_flat[71-:8] <= get_digit(disp_score, 2'd2);  // hundreds
+                        lcd_line2_flat[63-:8] <= get_digit(disp_score, 2'd1);  // tens
+                        lcd_line2_flat[55-:8] <= get_digit(disp_score, 2'd0);  // ones
+                    end else if (disp_score >= 10) begin
+                        // 2 digits: tens, ones
+                        lcd_line2_flat[71-:8] <= get_digit(disp_score, 2'd1);  // tens
+                        lcd_line2_flat[63-:8] <= get_digit(disp_score, 2'd0);  // ones
+                    end else begin
+                        // 1 digit: ones
+                        lcd_line2_flat[71-:8] <= get_digit(disp_score, 2'd0);  // ones
+                    end
 
                     // Reset answer buffer for next puzzle
                     lcd_index1  <= 0;
@@ -715,10 +803,36 @@ always @(posedge clk or posedge rst) begin
                         lcd_line2_flat[127-8*i -: 8] <= "e";
                     else if (i == nick_index+6)
                         lcd_line2_flat[127-8*i -: 8] <= ":";
-                    else if (i == nick_index+7)
-                        lcd_line2_flat[127-8*i -: 8] <= (score % 10) + 8'd48;
-                    else
+                    else if (i == nick_index+7) begin
+                        // Display first digit of score
+                        if (score >= 100)
+                            lcd_line2_flat[127-8*i -: 8] <= get_digit(score, 2'd2);  // hundreds
+                        else if (score >= 10)
+                            lcd_line2_flat[127-8*i -: 8] <= get_digit(score, 2'd1);  // tens
+                        else
+                            lcd_line2_flat[127-8*i -: 8] <= get_digit(score, 2'd0);  // ones
+                    end else if (i == nick_index+8 && score >= 10) begin
+                        // Display second digit if score >= 10
+                        if (score >= 100)
+                            lcd_line2_flat[127-8*i -: 8] <= get_digit(score, 2'd1);  // tens
+                        else
+                            lcd_line2_flat[127-8*i -: 8] <= get_digit(score, 2'd0);  // ones
+                    end else if (i == nick_index+9 && score >= 100) begin
+                        // Display third digit if score >= 100
+                        lcd_line2_flat[127-8*i -: 8] <= get_digit(score, 2'd0);  // ones
+                    end else
                         lcd_line2_flat[127-8*i -: 8] <= 8'h20;
+                end
+                
+                // Press ENTER to return to mode selection
+                if (BTN_ENTER && !enter_pressed) begin
+                    enter_pressed <= 1;
+                    in_game       <= 1'b0;  // reset game flag
+                    lives         <= 3;     // restore lives on reset
+                    score         <= 0;     // clear score on reset
+                    game_state    <= S_MODE;
+                end else if (!BTN_ENTER) begin
+                    enter_pressed <= 0;
                 end
             end
 
@@ -809,7 +923,7 @@ always @(posedge clk or posedge rst) begin
                 buzz_mode   <= BUZZ_TIMEOUT;
                 cur_div     <= NOTE_SO;
                 total_timer <= TIMEOUT_TOTAL_DUR;
-            end else if (user_input == target_answer) begin
+            end else if (latched_input == target_answer) begin
                 // Correct: do-re-mi-fa-so-la-ti-do
                 buzz_mode   <= BUZZ_CORRECT;
                 melody_step <= 3'd0;

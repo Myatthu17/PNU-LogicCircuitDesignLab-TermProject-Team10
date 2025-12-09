@@ -23,6 +23,8 @@ module top(
     // Life LEDs (3 bits)
     output [2:0]  life_led,
 
+    output led4,
+
     // Full-color LED bar (4R, 4G, 4B)
     output [3:0]  led_r,
     output [3:0]  led_g,
@@ -105,6 +107,7 @@ module top(
     wire        led_minus_c;
     wire        led_mul_c;
     wire        led_div_c;
+    wire        piezo_c;
 
     calculator u_calculator (
         .rst            (rst_calculator),
@@ -124,7 +127,8 @@ module top(
         .led_plus       (led_plus_c),
         .led_minus      (led_minus_c),
         .led_mul        (led_mul_c),
-        .led_div        (led_div_c)
+        .led_div        (led_div_c),
+        .piezo          (piezo_c)
     );
 
     //============================
@@ -136,11 +140,17 @@ module top(
     assign lcd_data = mode_sel ? lcd_data_c : lcd_data_p;
 
     // When in calculator mode, turn puzzle-specific LEDs/buzzer off
-    assign life_led = mode_sel ? 3'b000      : life_led_p;
+    
+    // life_led[2:0] and led4 driven by calculator in calculator mode
+    assign life_led[0] = mode_sel ? led_plus_c  : life_led_p[0];
+    assign life_led[1] = mode_sel ? led_minus_c : life_led_p[1];
+    assign life_led[2] = mode_sel ? led_mul_c   : life_led_p[2];
+    assign led4 = mode_sel ? led_div_c : 1'b0;  // puzzle does not use led4
+
     assign led_r    = mode_sel ? 4'b0000     : led_r_p;
     assign led_g    = mode_sel ? 4'b0000     : led_g_p;
     assign led_b    = mode_sel ? 4'b0000     : led_b_p;
-    assign piezo    = mode_sel ? 1'b0        : piezo_p;
+    assign piezo    = mode_sel ? piezo_c    : piezo_p;
 
     // 7‑segment: puzzle drives all 8 bits; calculator drives 7 bits + dp
     assign seg = mode_sel ? {seven_seg_dp_c, seven_seg_c} : seg_p;

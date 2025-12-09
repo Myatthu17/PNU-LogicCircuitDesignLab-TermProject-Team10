@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Tue Dec  2 20:46:52 2025
+| Date         : Tue Dec  9 19:19:51 2025
 | Host         : DESKTOP-637IPB4 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    68 |
-|    Minimum number of control sets                        |    68 |
+| Total control sets                                       |    72 |
+|    Minimum number of control sets                        |    72 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   175 |
+| Unused register locations in slices containing registers |   181 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    68 |
+| Total control sets |    72 |
 | >= 0 to < 4        |     0 |
-| >= 4 to < 6        |    11 |
+| >= 4 to < 6        |    14 |
 | >= 6 to < 8        |    36 |
-| >= 8 to < 10       |     2 |
+| >= 8 to < 10       |     1 |
 | >= 10 to < 12      |     1 |
-| >= 12 to < 14      |     2 |
+| >= 12 to < 14      |     3 |
 | >= 14 to < 16      |     0 |
-| >= 16              |    16 |
+| >= 16              |    17 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -59,88 +59,92 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |               0 |            0 |
-| No           | No                    | Yes                    |             180 |           74 |
+| No           | No                    | Yes                    |             204 |           92 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |              57 |           21 |
-| Yes          | No                    | Yes                    |             644 |          285 |
-| Yes          | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |              37 |           18 |
+| Yes          | No                    | Yes                    |             710 |          330 |
+| Yes          | Yes                   | No                     |              36 |            9 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+-----------------------------------------+-----------------------------+------------------+----------------+--------------+
-|  Clock Signal  |              Enable Signal              |       Set/Reset Signal      | Slice Load Count | Bel Load Count | Bels / Slice |
-+----------------+-----------------------------------------+-----------------------------+------------------+----------------+--------------+
-|  clk_IBUF_BUFG | u_puzzle/u_lcd/state[3]_i_1_n_0         | u_puzzle/u_lcd/rst_puzzle   |                1 |              4 |         4.00 |
-|  lcd_e_c_BUFG  | u_calculator/p_33_in                    |                             |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_puzzle/name_last_btn[3]_i_1_n_0       | u_puzzle/u_lcd/rst_puzzle   |                3 |              4 |         1.33 |
-|  clk_IBUF_BUFG | u_puzzle/number[3]_i_1_n_0              | u_puzzle/u_lcd/rst_puzzle   |                1 |              4 |         4.00 |
-|  lcd_e_c_BUFG  | u_calculator/seven_seg_digit[3]_i_1_n_0 | u_calculator/rst_calculator |                3 |              4 |         1.33 |
-|  lcd_e_c_BUFG  | u_calculator/result_has_decimal32_in    | u_calculator/rst_calculator |                1 |              4 |         4.00 |
-|  lcd_e_c_BUFG  | u_calculator/state[3]_i_1__0_n_0        | u_calculator/rst_calculator |                3 |              4 |         1.33 |
-|  lcd_e_c_BUFG  | u_calculator/cursor_pos[3]_i_1_n_0      | u_calculator/rst_calculator |                2 |              4 |         2.00 |
-|  lcd_e_c_BUFG  | u_calculator/backspace_request          | u_calculator/rst_calculator |                2 |              5 |         2.50 |
-|  clk_IBUF_BUFG | u_puzzle/u_lcd/char_pos[4]_i_1_n_0      | u_puzzle/u_lcd/rst_puzzle   |                1 |              5 |         5.00 |
-|  lcd_e_c_BUFG  | u_calculator/queued_char_data           | u_calculator/rst_calculator |                4 |              5 |         1.25 |
-|  clk_IBUF_BUFG | u_puzzle/nickname[10][6]_i_1_n_0        | u_puzzle/u_lcd/rst_puzzle   |                3 |              6 |         2.00 |
-|  clk_IBUF_BUFG | u_puzzle/nickname[14][6]_i_1_n_0        | u_puzzle/u_lcd/rst_puzzle   |                3 |              6 |         2.00 |
-|  clk_IBUF_BUFG | u_puzzle/nickname[2][6]_i_1_n_0         | u_puzzle/u_lcd/rst_puzzle   |                2 |              6 |         3.00 |
-|  clk_IBUF_BUFG | u_puzzle/nickname[3][6]_i_1_n_0         | u_puzzle/u_lcd/rst_puzzle   |                3 |              6 |         2.00 |
-|  clk_IBUF_BUFG | u_puzzle/nickname[11][6]_i_1_n_0        | u_puzzle/u_lcd/rst_puzzle   |                3 |              6 |         2.00 |
-|  clk_IBUF_BUFG | u_puzzle/nickname[5][6]_i_1_n_0         | u_puzzle/u_lcd/rst_puzzle   |                2 |              6 |         3.00 |
-|  clk_IBUF_BUFG | u_puzzle/nickname[6][6]_i_1_n_0         | u_puzzle/u_lcd/rst_puzzle   |                4 |              6 |         1.50 |
-|  clk_IBUF_BUFG | u_puzzle/nickname[1][6]_i_1_n_0         | u_puzzle/u_lcd/rst_puzzle   |                2 |              6 |         3.00 |
-|  clk_IBUF_BUFG | u_puzzle/nickname[7][6]_i_1_n_0         | u_puzzle/u_lcd/rst_puzzle   |                3 |              6 |         2.00 |
-|  clk_IBUF_BUFG | u_puzzle/nickname[15][6]_i_1_n_0        | u_puzzle/u_lcd/rst_puzzle   |                2 |              6 |         3.00 |
-|  clk_IBUF_BUFG | u_puzzle/nickname[8][6]_i_1_n_0         | u_puzzle/u_lcd/rst_puzzle   |                1 |              6 |         6.00 |
-|  clk_IBUF_BUFG | u_puzzle/nickname[9][6]_i_1_n_0         | u_puzzle/u_lcd/rst_puzzle   |                3 |              6 |         2.00 |
-|  clk_IBUF_BUFG | u_puzzle/nickname[4][6]_i_1_n_0         | u_puzzle/u_lcd/rst_puzzle   |                3 |              6 |         2.00 |
-|  clk_IBUF_BUFG | u_puzzle/time_left[5]_i_1_n_0           | u_puzzle/u_lcd/rst_puzzle   |                2 |              6 |         3.00 |
-|  clk_IBUF_BUFG | u_puzzle/u_lcd/pow_cnt                  | u_puzzle/u_lcd/rst_puzzle   |                2 |              6 |         3.00 |
-|  lcd_e_c_BUFG  | u_calculator/entry_count[5]_i_1_n_0     | u_calculator/rst_calculator |                3 |              6 |         2.00 |
-|  clk_IBUF_BUFG | u_puzzle/nickname[12][6]_i_1_n_0        | u_puzzle/u_lcd/rst_puzzle   |                3 |              6 |         2.00 |
-|  clk_IBUF_BUFG | u_puzzle/nickname[13][6]_i_1_n_0        | u_puzzle/u_lcd/rst_puzzle   |                2 |              6 |         3.00 |
-|  clk_IBUF_BUFG | u_puzzle/nickname[0][6]_i_1_n_0         | u_puzzle/u_lcd/rst_puzzle   |                4 |              6 |         1.50 |
-|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[102]_i_1_n_0    | u_puzzle/u_lcd/rst_puzzle   |                5 |              7 |         1.40 |
-|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[86]_i_1_n_0     | u_puzzle/u_lcd/rst_puzzle   |                4 |              7 |         1.75 |
-|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[94]_i_1_n_0     | u_puzzle/u_lcd/rst_puzzle   |                6 |              7 |         1.17 |
-|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[54]_i_1_n_0     | u_puzzle/u_lcd/rst_puzzle   |                4 |              7 |         1.75 |
-|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[62]_i_1_n_0     | u_puzzle/u_lcd/rst_puzzle   |                5 |              7 |         1.40 |
-|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[70]_i_1_n_0     | u_puzzle/u_lcd/rst_puzzle   |                3 |              7 |         2.33 |
-|  lcd_e_c_BUFG  | u_calculator/char_to_write[6]_i_1_n_0   | u_calculator/rst_calculator |                5 |              7 |         1.40 |
-|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[46]_i_1_n_0     | u_puzzle/u_lcd/rst_puzzle   |                3 |              7 |         2.33 |
-|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[110]_i_1_n_0    | u_puzzle/u_lcd/rst_puzzle   |                3 |              7 |         2.33 |
-|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[118]_i_1_n_0    | u_puzzle/u_lcd/rst_puzzle   |                4 |              7 |         1.75 |
-|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[126]_i_1_n_0    | u_puzzle/u_lcd/rst_puzzle   |                3 |              7 |         2.33 |
-|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[14]_i_1_n_0     | u_puzzle/u_lcd/rst_puzzle   |                4 |              7 |         1.75 |
-|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[22]_i_1_n_0     | u_puzzle/u_lcd/rst_puzzle   |                4 |              7 |         1.75 |
-|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[30]_i_1_n_0     | u_puzzle/u_lcd/rst_puzzle   |                4 |              7 |         1.75 |
-|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[38]_i_1_n_0     | u_puzzle/u_lcd/rst_puzzle   |                4 |              7 |         1.75 |
-|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[6]_i_1_n_0      | u_puzzle/u_lcd/rst_puzzle   |                3 |              7 |         2.33 |
-|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[78]_i_1_n_0     | u_puzzle/u_lcd/rst_puzzle   |                5 |              7 |         1.40 |
-|  clk_IBUF_BUFG | u_puzzle/u_lcd/lcd_data[7]_i_1_n_0      | u_puzzle/u_lcd/rst_puzzle   |                4 |              9 |         2.25 |
-|  lcd_e_c_BUFG  | u_calculator/result_is_error34_out      |                             |                3 |              9 |         3.00 |
-|  lcd_e_c_BUFG  | u_calculator/cnt[9]_i_1_n_0             | u_calculator/rst_calculator |                6 |             10 |         1.67 |
-|  lcd_e_c_BUFG  | u_calculator/ones[3]_i_1_n_0            |                             |                5 |             12 |         2.40 |
-|  clk_IBUF_BUFG | u_puzzle/cur_div[14]_i_1_n_0            | u_puzzle/u_lcd/rst_puzzle   |                6 |             12 |         2.00 |
-|  lcd_e_c_BUFG  | u_calculator/operand1[15]_i_1_n_0       | u_calculator/rst_calculator |                9 |             16 |         1.78 |
-|  lcd_e_c_BUFG  | u_calculator/operand2[15]_i_1_n_0       | u_calculator/rst_calculator |               13 |             16 |         1.23 |
-|  clk_IBUF_BUFG |                                         | u_calculator/rst_calculator |                7 |             24 |         3.43 |
-|  clk_IBUF_BUFG | u_puzzle/buzz_cnt[24]_i_1_n_0           | u_puzzle/u_lcd/rst_puzzle   |                4 |             25 |         6.25 |
-|  clk_IBUF_BUFG | u_puzzle/total_timer[24]_i_1_n_0        | u_puzzle/u_lcd/rst_puzzle   |                9 |             25 |         2.78 |
-|  clk_IBUF_BUFG | u_puzzle/dur_cnt[24]_i_1_n_0            | u_puzzle/u_lcd/rst_puzzle   |                9 |             25 |         2.78 |
-|  clk_IBUF_BUFG | u_puzzle/sec_div[25]_i_1_n_0            | u_puzzle/u_lcd/rst_puzzle   |               10 |             26 |         2.60 |
-|  clk_IBUF_BUFG | u_puzzle/feedback_cnt[26]_i_1_n_0       | u_puzzle/u_lcd/rst_puzzle   |                6 |             27 |         4.50 |
-|  clk_IBUF_BUFG | u_puzzle/user_input[31]_i_1_n_0         | u_puzzle/u_lcd/rst_puzzle   |               17 |             32 |         1.88 |
-|  clk_IBUF_BUFG | u_puzzle/score[0]_i_1_n_0               | u_puzzle/u_lcd/rst_puzzle   |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG | u_puzzle/lcd_index1[31]_i_1_n_0         | u_puzzle/u_lcd/rst_puzzle   |                7 |             32 |         4.57 |
-|  clk_IBUF_BUFG | u_puzzle/target_answer                  |                             |               12 |             32 |         2.67 |
-|  clk_IBUF_BUFG | u_puzzle/nick_index[31]_i_1_n_0         | u_puzzle/u_lcd/rst_puzzle   |               12 |             32 |         2.67 |
-|  clk_IBUF_BUFG | u_puzzle/lcd_line1_flat[125]_i_1_n_0    | u_puzzle/u_lcd/rst_puzzle   |               25 |             49 |         1.96 |
-|  lcd_e_c_BUFG  |                                         | u_calculator/rst_calculator |               30 |             57 |         1.90 |
-|  clk_IBUF_BUFG |                                         | u_puzzle/u_lcd/rst_puzzle   |               37 |             99 |         2.68 |
-+----------------+-----------------------------------------+-----------------------------+------------------+----------------+--------------+
++----------------+------------------------------------------+----------------------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |               Enable Signal              |               Set/Reset Signal               | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+------------------------------------------+----------------------------------------------+------------------+----------------+--------------+
+|  lcd_e_c_BUFG  | u_calculator/result_is_error34_out       | u_calculator/result_decimal_digit[3]_i_1_n_0 |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_puzzle/number_valid0                   | u_puzzle/u_lcd/AR[0]                         |                3 |              4 |         1.33 |
+|  clk_IBUF_BUFG | u_calculator/digit_pressed_valid0        | u_calculator/cnt_100hz[15]_i_2_n_0           |                4 |              4 |         1.00 |
+|  clk_IBUF_BUFG | u_puzzle/u_lcd/state[3]_i_1_n_0          | u_puzzle/u_lcd/AR[0]                         |                1 |              4 |         4.00 |
+|  lcd_e_c_BUFG  | u_calculator/p_33_in                     |                                              |                1 |              4 |         4.00 |
+|  lcd_e_c_BUFG  | u_calculator/cursor_pos[3]_i_1_n_0       | u_calculator/cnt_100hz[15]_i_2_n_0           |                1 |              4 |         4.00 |
+|  lcd_e_c_BUFG  | u_calculator/state[3]_i_1__0_n_0         | u_calculator/cnt_100hz[15]_i_2_n_0           |                1 |              4 |         4.00 |
+|  lcd_e_c_BUFG  | u_calculator/backspace_pos               | u_calculator/cnt_100hz[15]_i_2_n_0           |                1 |              4 |         4.00 |
+|  lcd_e_c_BUFG  | u_calculator/led_plus_i_1_n_0            | u_calculator/cnt_100hz[15]_i_2_n_0           |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_puzzle/name_last_btn[3]_i_1_n_0        | u_puzzle/u_lcd/AR[0]                         |                3 |              4 |         1.33 |
+|  lcd_e_c_BUFG  | u_calculator/seven_seg_digit[3]_i_1_n_0  | u_calculator/cnt_100hz[15]_i_2_n_0           |                3 |              4 |         1.33 |
+|  lcd_e_c_BUFG  | u_calculator/result_is_error34_out       |                                              |                4 |              5 |         1.25 |
+|  lcd_e_c_BUFG  | u_calculator/queued_char_data[5]_i_1_n_0 | u_calculator/cnt_100hz[15]_i_2_n_0           |                4 |              5 |         1.25 |
+|  clk_IBUF_BUFG | u_puzzle/u_lcd/char_pos[4]_i_1_n_0       | u_puzzle/u_lcd/AR[0]                         |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG | u_puzzle/nickname[15][6]_i_1_n_0         | u_puzzle/u_lcd/AR[0]                         |                4 |              6 |         1.50 |
+|  clk_IBUF_BUFG | u_puzzle/nickname[13][6]_i_1_n_0         | u_puzzle/u_lcd/AR[0]                         |                4 |              6 |         1.50 |
+|  clk_IBUF_BUFG | u_puzzle/nickname[14][6]_i_1_n_0         | u_puzzle/u_lcd/AR[0]                         |                3 |              6 |         2.00 |
+|  clk_IBUF_BUFG | u_puzzle/nickname[8][6]_i_1_n_0          | u_puzzle/u_lcd/AR[0]                         |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG | u_puzzle/nickname[10][6]_i_1_n_0         | u_puzzle/u_lcd/AR[0]                         |                3 |              6 |         2.00 |
+|  clk_IBUF_BUFG | u_puzzle/u_lcd/pow_cnt                   | u_puzzle/u_lcd/AR[0]                         |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG | u_puzzle/nickname[12][6]_i_1_n_0         | u_puzzle/u_lcd/AR[0]                         |                4 |              6 |         1.50 |
+|  clk_IBUF_BUFG | u_puzzle/nickname[11][6]_i_1_n_0         | u_puzzle/u_lcd/AR[0]                         |                4 |              6 |         1.50 |
+|  clk_IBUF_BUFG | u_puzzle/nickname[0][6]_i_1_n_0          | u_puzzle/u_lcd/AR[0]                         |                5 |              6 |         1.20 |
+|  clk_IBUF_BUFG | u_puzzle/nickname[6][6]_i_1_n_0          | u_puzzle/u_lcd/AR[0]                         |                3 |              6 |         2.00 |
+|  clk_IBUF_BUFG | u_puzzle/nickname[1][6]_i_1_n_0          | u_puzzle/u_lcd/AR[0]                         |                5 |              6 |         1.20 |
+|  clk_IBUF_BUFG | u_puzzle/nickname[2][6]_i_1_n_0          | u_puzzle/u_lcd/AR[0]                         |                3 |              6 |         2.00 |
+|  clk_IBUF_BUFG | u_puzzle/nickname[4][6]_i_1_n_0          | u_puzzle/u_lcd/AR[0]                         |                6 |              6 |         1.00 |
+|  clk_IBUF_BUFG | u_puzzle/nickname[5][6]_i_1_n_0          | u_puzzle/u_lcd/AR[0]                         |                5 |              6 |         1.20 |
+|  clk_IBUF_BUFG | u_puzzle/nickname[7][6]_i_1_n_0          | u_puzzle/u_lcd/AR[0]                         |                3 |              6 |         2.00 |
+|  clk_IBUF_BUFG | u_puzzle/nickname[3][6]_i_1_n_0          | u_puzzle/u_lcd/AR[0]                         |                5 |              6 |         1.20 |
+|  clk_IBUF_BUFG | u_puzzle/nickname[9][6]_i_1_n_0          | u_puzzle/u_lcd/AR[0]                         |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG | u_puzzle/time_left[5]_i_1_n_0            | u_puzzle/u_lcd/AR[0]                         |                3 |              6 |         2.00 |
+|  lcd_e_c_BUFG  | u_calculator/entry_count[5]_i_1_n_0      | u_calculator/cnt_100hz[15]_i_2_n_0           |                3 |              6 |         2.00 |
+|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[118]_i_1_n_0     | u_puzzle/u_lcd/AR[0]                         |                5 |              7 |         1.40 |
+|  lcd_e_c_BUFG  | u_calculator/char_to_write[6]_i_1_n_0    | u_calculator/cnt_100hz[15]_i_2_n_0           |                5 |              7 |         1.40 |
+|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[86]_i_1_n_0      | u_puzzle/u_lcd/AR[0]                         |                5 |              7 |         1.40 |
+|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[6]_i_1_n_0       | u_puzzle/u_lcd/AR[0]                         |                3 |              7 |         2.33 |
+|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[102]_i_1_n_0     | u_puzzle/u_lcd/AR[0]                         |                4 |              7 |         1.75 |
+|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[110]_i_1_n_0     | u_puzzle/u_lcd/AR[0]                         |                5 |              7 |         1.40 |
+|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[94]_i_1_n_0      | u_puzzle/u_lcd/AR[0]                         |                5 |              7 |         1.40 |
+|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[126]_i_1_n_0     | u_puzzle/u_lcd/AR[0]                         |                6 |              7 |         1.17 |
+|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[14]_i_1_n_0      | u_puzzle/u_lcd/AR[0]                         |                3 |              7 |         2.33 |
+|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[22]_i_1_n_0      | u_puzzle/u_lcd/AR[0]                         |                3 |              7 |         2.33 |
+|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[30]_i_1_n_0      | u_puzzle/u_lcd/AR[0]                         |                5 |              7 |         1.40 |
+|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[78]_i_1_n_0      | u_puzzle/u_lcd/AR[0]                         |                3 |              7 |         2.33 |
+|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[70]_i_1_n_0      | u_puzzle/u_lcd/AR[0]                         |                5 |              7 |         1.40 |
+|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[62]_i_1_n_0      | u_puzzle/u_lcd/AR[0]                         |                4 |              7 |         1.75 |
+|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[54]_i_1_n_0      | u_puzzle/u_lcd/AR[0]                         |                4 |              7 |         1.75 |
+|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[46]_i_1_n_0      | u_puzzle/u_lcd/AR[0]                         |                6 |              7 |         1.17 |
+|  clk_IBUF_BUFG | u_puzzle/lcd_line2_flat[38]_i_1_n_0      | u_puzzle/u_lcd/AR[0]                         |                4 |              7 |         1.75 |
+|  clk_IBUF_BUFG | u_puzzle/u_lcd/lcd_rs_i_1_n_0            | u_puzzle/u_lcd/AR[0]                         |                3 |              9 |         3.00 |
+|  lcd_e_c_BUFG  | u_calculator/cnt[9]_i_1_n_0              | u_calculator/cnt_100hz[15]_i_2_n_0           |                6 |             10 |         1.67 |
+|  clk_IBUF_BUFG | u_calculator/buzz_mode0                  | u_calculator/cnt_100hz[15]_i_2_n_0           |                2 |             12 |         6.00 |
+|  clk_IBUF_BUFG | u_puzzle/cur_div[14]_i_1_n_0             | u_puzzle/u_lcd/AR[0]                         |                7 |             12 |         1.71 |
+|  lcd_e_c_BUFG  | u_calculator/ones[3]_i_1_n_0             |                                              |                6 |             12 |         2.00 |
+|  clk_IBUF_BUFG | u_puzzle/operandA                        |                                              |                7 |             16 |         2.29 |
+|  lcd_e_c_BUFG  | u_calculator/operand1[15]_i_1_n_0        | u_calculator/cnt_100hz[15]_i_2_n_0           |               10 |             16 |         1.60 |
+|  lcd_e_c_BUFG  | u_calculator/operand2[15]_i_1_n_0        | u_calculator/cnt_100hz[15]_i_2_n_0           |               12 |             16 |         1.33 |
+|  clk_IBUF_BUFG | u_puzzle/dur_cnt[24]_i_1_n_0             | u_puzzle/u_lcd/AR[0]                         |               10 |             25 |         2.50 |
+|  clk_IBUF_BUFG | u_puzzle/total_timer[24]_i_1_n_0         | u_puzzle/u_lcd/AR[0]                         |               10 |             25 |         2.50 |
+|  clk_IBUF_BUFG | u_puzzle/buzz_cnt[24]_i_1_n_0            | u_puzzle/u_lcd/AR[0]                         |                6 |             25 |         4.17 |
+|  clk_IBUF_BUFG | u_puzzle/sec_div[25]_i_1_n_0             | u_puzzle/u_lcd/AR[0]                         |                8 |             26 |         3.25 |
+|  clk_IBUF_BUFG | u_puzzle/feedback_cnt[26]_i_1_n_0        | u_puzzle/u_lcd/AR[0]                         |                6 |             27 |         4.50 |
+|  clk_IBUF_BUFG | u_puzzle/latched_input[31]_i_2_n_0       | u_puzzle/latched_input[31]_i_1_n_0           |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | u_puzzle/nick_index[31]_i_1_n_0          | u_puzzle/u_lcd/AR[0]                         |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG | u_puzzle/score[31]_i_1_n_0               | u_puzzle/u_lcd/AR[0]                         |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG |                                          | u_calculator/cnt_100hz[15]_i_2_n_0           |               16 |             47 |         2.94 |
+|  clk_IBUF_BUFG | u_puzzle/lcd_line1_flat[125]_i_1_n_0     | u_puzzle/u_lcd/AR[0]                         |               25 |             50 |         2.00 |
+|  clk_IBUF_BUFG | u_calculator/buzz_mode[0]_i_1__0_n_0     | u_calculator/cnt_100hz[15]_i_2_n_0           |               12 |             50 |         4.17 |
+|  lcd_e_c_BUFG  |                                          | u_calculator/cnt_100hz[15]_i_2_n_0           |               35 |             62 |         1.77 |
+|  clk_IBUF_BUFG | u_puzzle/lcd_index1[31]_i_1_n_0          | u_puzzle/u_lcd/AR[0]                         |               24 |             64 |         2.67 |
+|  clk_IBUF_BUFG |                                          | u_puzzle/u_lcd/AR[0]                         |               41 |             95 |         2.32 |
++----------------+------------------------------------------+----------------------------------------------+------------------+----------------+--------------+
 
 

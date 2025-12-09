@@ -15,7 +15,8 @@ module calculator(
     output reg         led_plus,
     output reg         led_minus,
     output reg         led_mul,
-    output reg         led_div
+    output reg         led_div,
+    output wire        piezo
 );
 
 //////////////////////////
@@ -125,6 +126,130 @@ integer remainder_temp;
 integer decimal_calc;
 integer has_decimal_flag;
 integer decimal_digit_store;
+
+//=========================
+// Buzzer control with keypad beep (50MHz)
+//=========================
+localparam BUZZ_IDLE      = 3'd0;
+localparam BUZZ_KEYPAD    = 3'd1;
+
+reg  [2:0]  buzz_mode;
+reg  [24:0] buzz_cnt;      // divider counter
+reg  [24:0] total_timer;   // duration for keypad beep
+reg  [15:0] cur_div;       // current frequency divider
+reg         piezo_reg;
+reg  [3:0]  pressed_digit; // digit that was pressed (0-9)
+
+// Note "frequencies" (different divisors -> different pitches)
+localparam [15:0] NOTE_DO   = 16'd25_000;
+localparam [15:0] NOTE_RE   = 16'd22_000;
+localparam [15:0] NOTE_MI   = 16'd20_000;
+localparam [15:0] NOTE_FA   = 16'd18_000;
+localparam [15:0] NOTE_SO   = 16'd16_000;
+localparam [15:0] NOTE_LA   = 16'd14_000;
+localparam [15:0] NOTE_TI   = 16'd12_000;
+localparam [15:0] NOTE_DO2  = 16'd10_000;
+
+// Short keypad click (~0.1s at 50 MHz)
+localparam [24:0] KEYPAD_DUR = 25'd5_000_000;
+
+// Map keypad key index to a note frequency
+function [15:0] key_divisor;
+    input [3:0] key;
+    begin
+        case (key)
+            4'd0:  key_divisor = NOTE_DO2; // "0"
+            4'd1:  key_divisor = NOTE_DO;  // "1"
+            4'd2:  key_divisor = NOTE_RE;  // "2"
+            4'd3:  key_divisor = NOTE_MI;  // "3"
+            4'd4:  key_divisor = NOTE_FA;  // "4"
+            4'd5:  key_divisor = NOTE_SO;  // "5"
+            4'd6:  key_divisor = NOTE_LA;  // "6"
+            4'd7:  key_divisor = NOTE_TI;  // "7"
+            4'd8:  key_divisor = NOTE_DO2; // "8"
+            4'd9:  key_divisor = NOTE_RE;  // "9"
+            default: key_divisor = NOTE_SO;
+        endcase
+    end
+endfunction
+
+// Detect which digit was pressed (in clk domain for piezo)
+reg [11:0] keypad_prev;
+reg [11:0] keypad_sync;
+reg [3:0]  detected_digit;
+reg        digit_pressed_valid;
+
+always @(posedge clk or posedge rst) begin
+    if (rst) begin
+        keypad_sync <= 12'd0;
+        keypad_prev <= 12'd0;
+        detected_digit <= 4'd0;
+        digit_pressed_valid <= 1'b0;
+    end else begin
+        keypad_sync <= keypad_buttons;
+        keypad_prev <= keypad_sync;
+        digit_pressed_valid <= 1'b0;
+        
+        // Detect rising edge on any digit button (0-9)
+        for (i = 0; i < 10; i = i + 1) begin
+            if (keypad_sync[i] && !keypad_prev[i]) begin
+                detected_digit <= i[3:0];
+                digit_pressed_valid <= 1'b1;
+            end
+        end
+    end
+end
+
+// Piezo buzzer control
+always @(posedge clk or posedge rst) begin
+    if (rst) begin
+        buzz_mode   <= BUZZ_IDLE;
+        buzz_cnt    <= 25'd0;
+        total_timer <= 25'd0;
+        cur_div     <= NOTE_DO;
+        piezo_reg   <= 1'b0;
+        pressed_digit <= 4'd0;
+    end else begin
+        // Keypad sound trigger (only when not playing another sound)
+        if (buzz_mode == BUZZ_IDLE && digit_pressed_valid) begin
+            buzz_mode   <= BUZZ_KEYPAD;
+            buzz_cnt    <= 25'd0;
+            total_timer <= KEYPAD_DUR;
+            pressed_digit <= detected_digit;
+            cur_div     <= key_divisor(detected_digit);
+            piezo_reg   <= 1'b0;
+        end
+
+        // Sound generation
+        case (buzz_mode)
+            BUZZ_IDLE: begin
+                piezo_reg <= 1'b0;
+            end
+
+            BUZZ_KEYPAD: begin
+                if (total_timer == 0) begin
+                    buzz_mode <= BUZZ_IDLE;
+                    piezo_reg <= 1'b0;
+                end else begin
+                    total_timer <= total_timer - 1'b1;
+
+                    buzz_cnt <= buzz_cnt + 1'b1;
+                    if (buzz_cnt >= cur_div) begin
+                        buzz_cnt  <= 25'd0;
+                        piezo_reg <= ~piezo_reg;
+                    end
+                end
+            end
+
+            default: begin
+                buzz_mode <= BUZZ_IDLE;
+                piezo_reg <= 1'b0;
+            end
+        endcase
+    end
+end
+
+assign piezo = piezo_reg;
 
 always @(posedge clk or posedge rst) begin
     if (rst) begin
